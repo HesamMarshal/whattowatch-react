@@ -1,3 +1,5 @@
+import { BsSearch } from "react-icons/bs";
+
 function Header() {
   return (
     <div className="header">
@@ -7,6 +9,7 @@ function Header() {
           <span className="separator"></span>
         </div>
         <div className="headerSearchItem">
+          <BsSearch />
           <input
             type="text"
             id="searchItem"
