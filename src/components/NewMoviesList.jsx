@@ -7,12 +7,12 @@ import imagePlaceholder from "../assets/images/placeholder.jpg";
 // TMDB
 
 const API_KEY = "api_key=01c09651636453d932a88c8d279f48a9";
-const BASE_URL = "https://api.themoviedb.org/3";
-// const API_URL = BASE_URL + "/discover/movie?sort_by=popularity.desc&language=fa&" + API_KEY;
-const API_URL = BASE_URL + "/discover/movie?sort_by=popularity.desc&" + API_KEY;
+const baseURL = "https://api.themoviedb.org/3";
+// const API_URL = baseURL + "/discover/movie?sort_by=popularity.desc&language=fa&" + API_KEY;
+const movieURL = baseURL + "/discover/movie?sort_by=popularity.desc&" + API_KEY;
 
-const SEARCH_URL = BASE_URL + "/search/movie?" + API_KEY;
-const IMG_URL = "https://image.tmdb.org/t/p/w500/";
+const searchURL = baseURL + "/search/movie?" + API_KEY;
+const imageURL = "https://image.tmdb.org/t/p/w500/";
 
 function NewMoviesList() {
   const [movies, setMovies] = useState([]);
@@ -23,8 +23,8 @@ function NewMoviesList() {
     async function fetchMovies() {
       try {
         setIsLoading(true);
-        const { data } = await axios.get(API_URL);
-        console.log(data.results);
+        const { data } = await axios.get(movieURL);
+        // console.log(data.results);
         setMovies(data.results.slice(0, 3));
       } catch (error) {
       } finally {
@@ -53,7 +53,7 @@ function NewMoviesList() {
         return (
           <div className="movie" key={id}>
             <img
-              src={poster_path ? IMG_URL + poster_path : imagePlaceholder}
+              src={poster_path ? imageURL + poster_path : imagePlaceholder}
               alt={title}
             />
             <div className="movieInfo">
