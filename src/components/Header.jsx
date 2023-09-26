@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 
 function Header() {
+  const [search, setSearch] = useState("");
   return (
     <div className="header">
       <div className="headerSearch">
@@ -16,6 +18,8 @@ function Header() {
             name="searchItem"
             placeholder="Search ..."
             className="headerSearchInput"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
           />
         </div>
       </div>
