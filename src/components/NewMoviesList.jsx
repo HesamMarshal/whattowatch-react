@@ -64,8 +64,6 @@ function NewMoviesList() {
                 {overview}
               </div>
             </div>
-
-            {title}
           </div>
         );
       })}
