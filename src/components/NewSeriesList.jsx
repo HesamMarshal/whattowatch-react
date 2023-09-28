@@ -6,7 +6,7 @@ import imagePlaceholder from "../assets/images/placeholder.jpg";
 
 // TMDB
 
-const API_KEY = "api_key=01c09651636453d932a88c8d279f48a9";
+const API_KEY = "api_key=8bde9f388c6e89b90a68fdc2eaddcbf8";
 const client_id =
   "217c9bb60bb9d0a2783c13d5c288a393cf900e0e7f41232071bfba977b2a73a5";
 const baseURL = "https://api.themoviedb.org/3";

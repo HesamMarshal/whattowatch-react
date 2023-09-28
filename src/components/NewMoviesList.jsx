@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 // TMDB
 
-const API_KEY = "api_key=01c09651636453d932a88c8d279f48a9";
+const API_KEY = "api_key=8bde9f388c6e89b90a68fdc2eaddcbf8";
 const baseURL = "https://api.themoviedb.org/3";
 // const API_URL = baseURL + "/discover/movie?sort_by=popularity.desc&language=fa&" + API_KEY;
 const movieURL = baseURL + "/discover/movie?sort_by=popularity.desc&" + API_KEY;
