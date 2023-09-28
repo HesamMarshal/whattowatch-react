@@ -35,40 +35,43 @@ function NewMoviesList() {
     fetchMovies();
   }, []);
 
-  function getColor(vote) {
-    if (vote >= 8) {
-      return "green";
-    } else if (vote >= 5) {
-      return "orange";
-    } else {
-      return "red";
-    }
-  }
-
   if (isLoading) return <Loading />;
   return (
     <section id="new-movie-list">
       {movies.map((movie) => {
-        const { id, title, poster_path, vote_average, overview } = movie;
-        return (
-          <div className="movie" key={id}>
-            <img
-              src={poster_path ? imageURL + poster_path : imagePlaceholder}
-              alt={title}
-            />
-            <div className="movieInfo">
-              <h3>{title}</h3>
-              <span className={getColor(vote_average)}>{vote_average}</span>
-              <div className="overview">
-                <h3>Overview</h3>
-                {overview}
-              </div>
-            </div>
-          </div>
-        );
+        return <Movie key={movie.id} movie={movie} />;
       })}
     </section>
   );
 }
 
+function getColor(vote) {
+  if (vote >= 8) {
+    return "green";
+  } else if (vote >= 5) {
+    return "orange";
+  } else {
+    return "red";
+  }
+}
+
 export default NewMoviesList;
+function Movie({ movie }) {
+  const { title, poster_path, vote_average, overview } = movie;
+  return (
+    <div className="movie">
+      <img
+        src={poster_path ? imageURL + poster_path : imagePlaceholder}
+        alt={title}
+      />
+      <div className="movieInfo">
+        <h3>{title}</h3>
+        <span className={getColor(vote_average)}>{vote_average}</span>
+        <div className="overview">
+          <h3>Overview</h3>
+          {overview}
+        </div>
+      </div>
+    </div>
+  );
+}
