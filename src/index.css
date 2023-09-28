@@ -54,7 +54,7 @@ body {
   /* display: flex; */
   min-width: 320px;
   min-height: 100vh;
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 
 h1 {
@@ -70,15 +70,12 @@ button {
   /* font-weight: 500; */
   /* font-family: inherit; */
   /* background-color: #1a1a1a; */
-  
-  
-  
+
   outline: none;
   border: none;
   background-color: transparent;
   cursor: pointer;
   transition: border-color 0.25s;
-
 }
 button:hover {
   border-color: #646cff;
@@ -103,7 +100,3 @@ button:disabled {
     background-color: #f9f9f9;
   }
 }
-
-
-
-
