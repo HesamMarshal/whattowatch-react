@@ -36,7 +36,7 @@ function NewSeriesList() {
       },
     };
 
-    async function fetchMovies() {
+    async function fetchSeries() {
       try {
         setIsLoading(true);
         const { data } = await axios.get(seriesURL, config);
@@ -48,41 +48,14 @@ function NewSeriesList() {
       }
     }
 
-    fetchMovies();
+    fetchSeries();
   }, []);
-
-  function getColor(vote) {
-    if (vote >= 8) {
-      return "green";
-    } else if (vote >= 5) {
-      return "orange";
-    } else {
-      return "red";
-    }
-  }
 
   if (isLoading) return <Loading />;
   return (
     <section id="new-movie-list">
       {series.map((serie) => {
-        // console.log(serie);
-        const { watchers, show } = serie;
-        const poster_path = "";
-        return (
-          <div className="movie" key={show.ids.imdb}>
-            <img
-              src={poster_path ? IMG_URL + poster_path : imagePlaceholder}
-              alt={show.title}
-            />
-            <div className="movieInfo">
-              <h3>{show.title}</h3>
-              <span className="green">{watchers}</span>
-              <div className="overview">
-                <h3>Overview</h3>
-              </div>
-            </div>
-          </div>
-        );
+        return <Series serie={serie} key={serie.show.ids.tmdb} />;
       })}
     </section>
   );
@@ -90,5 +63,32 @@ function NewSeriesList() {
 
 export default NewSeriesList;
 
-{
+function getColor(vote) {
+  if (vote >= 8) {
+    return "green";
+  } else if (vote >= 5) {
+    return "orange";
+  } else {
+    return "red";
+  }
+}
+function Series({ serie }) {
+  // console.log(serie);
+  const { watchers, show } = serie;
+  const poster_path = "";
+  return (
+    <div className="movie">
+      <img
+        src={poster_path ? IMG_URL + poster_path : imagePlaceholder}
+        alt={show.title}
+      />
+      <div className="movieInfo">
+        <h3>{show.title}</h3>
+        <span className="green">{watchers}</span>
+        <div className="overview">
+          <h3>Overview</h3>
+        </div>
+      </div>
+    </div>
+  );
 }
