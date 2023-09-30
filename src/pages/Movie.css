@@ -1,25 +1,39 @@
 .singleMovie {
+  margin-top: 1rem;
+}
+
+.singleMovie .upper {
+  background-color: var(--primary-color);
+  min-height: 350px;
+  display: flex;
+  justify-content: center;
 }
 .singleMovie .banner {
-  background-color: #cecece;
-  min-height: 350px;
   /* border: 1px solid red; */
   display: flex;
   flex-direction: row;
+  justify-content: center;
   margin-top: 1rem;
 }
-.banner .poster {
-  width: 350px;
+.banner .bannerPoster {
+  width: 300px;
   margin: 1rem;
   border-radius: 3px;
   box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
   background-color: #457b9d;
-  /* background-color:    var(--secondary-color); */
-  /* position: relative; */
+  background-color: var(--secondary-color);
+  position: relative;
   overflow: hidden;
-  border: 1px solid red;
+  /* border: 1px solid red; */
+}
+.singleMovie .banner img {
+  width: 100%;
+  overflow-clip-margin: content-box;
+  overflow: clip;
+  /* object-fit: contain; */
 }
 .banner .bannerInfo {
+  width: 700px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -28,7 +42,8 @@
   margin: 1rem;
 }
 .banner .details {
-  display: flex;
+  /* display: flex; */
+  /* flex-direction: start; */
 }
 
 .banner .producers {
@@ -50,8 +65,4 @@
 }
 .banner .rating span.red {
   color: red;
-}
-
-.singleMovie .banner img {
-  width: 100%;
 }

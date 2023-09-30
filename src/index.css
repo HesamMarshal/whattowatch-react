@@ -24,6 +24,29 @@
 
   /* Color Define */
 
+  /* --primary-color: #22254b; */
+
+  /* --secondary-color: #373b69; */
+  /* --opposite-color: #FCEFF9; */
+
+  --primary-color: #1d3557;
+  --secondary-color: #457b9d;
+  --opposite-color: #fceff9;
+
+  /* --background-color: #454851; */
+  /* --secondary-color: #73956F; */
+  /* --third-color: #7BAE7F; */
+  /* --forth-color: #95D7AE; */
+  /* --opposite-color: #FCEFF9; */
+
+  --background-color: #1d3557;
+  --secondary-color: #457b9d;
+  --third-color: #a8dadc;
+  --forth-color: #f1faee;
+  --opposite-color: #e63946;
+
+  /* Upper from old */
+
   --bg-color: #f3f4f6;
   --text-700: #374151;
   --text-400: #94a3b8;
@@ -88,9 +111,13 @@ button:disabled {
   cursor: not-allowed;
 }
 
+.container {
+  max-width: 1280px;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+    /* color: #213547; */
     background-color: #ffffff;
   }
   a:hover {
