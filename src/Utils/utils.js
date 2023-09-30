@@ -10,6 +10,8 @@ export const movieURL =
 
 export const searchURL = BASE_URL + "/search/movie?" + API_KEY;
 
+export const multiSearch = BASE_URL + "/search/multi?" + API_KEY;
+
 export function getColor(vote) {
   if (vote >= 8) {
     return "green";
