@@ -17,7 +17,7 @@ function NewMoviesList() {
         setIsLoading(true);
         const { data } = await axios.get(movieURL);
         // console.log(data.results);
-        setMovies(data.results.slice(0, 4));
+        setMovies(data.results);
       } catch (error) {
       } finally {
         setIsLoading(false);
