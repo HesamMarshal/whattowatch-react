@@ -34,7 +34,7 @@ function Movie() {
         const movieURL = baseURL + `/movie/${id}?language=en-US;&` + API_KEY;
         setIsLoading(true);
         const { data } = await axios.get(movieURL);
-        console.log(data);
+        // console.log(data);
         setMovie(data);
       } catch (error) {
         console.log(error);
