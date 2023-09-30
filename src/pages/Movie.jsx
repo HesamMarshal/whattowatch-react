@@ -68,53 +68,55 @@ function Movie() {
   } = movie;
   return (
     <div className="singleMovie">
-      <div className="banner">
-        {/* <img
+      <div className="upper">
+        <div className="banner container">
+          {/* <img
           src={backdrop_path ? imageURL + backdrop_path : imagePlaceholder}
           alt={title}
         /> */}
-        <div className="poster">
-          <img
-            src={poster_path ? imageURL + poster_path : imagePlaceholder}
-            alt={title}
-          />
-        </div>
-
-        <div className="bannerInfo">
-          <h3>
-            {/* TODO: split date to only year */}
-            {title}&nbsp;({release_date})
-          </h3>
-          <div className="details">
-            {/* TODO: Use suitable Icons for Adult */}
-            <div className="adult">{!adult ? "R" : "X"}&nbsp;&bull;</div>
-            <div className="releaseDate">{release_date}</div>
-            <div className="country">
-              &nbsp; (
-              {production_countries && production_countries[0].iso_3166_1}
-              )&nbsp;&bull;
-            </div>
-            <div className="genere">
-              {genres &&
-                genres.map((item) => (
-                  <span key={item.id}>&nbsp;{item.name}&nbsp;-</span>
-                ))}
-            </div>
-            {/* Todo: Change runtime to Hour and minutes */}
-            <div className="duration">&nbsp;&bull;{runtime}m</div>
-          </div>
-          <div className="rating">
-            TMDB: <span className={getColor(vote_average)}>{vote_average}</span>
-            {/* TODO: add IMDB rating */}
+          <div className="bannerPoster">
+            <img
+              src={poster_path ? imageURL + poster_path : imagePlaceholder}
+              alt={title}
+            />
           </div>
 
-          <div className="tagline">{tagline}</div>
-          <div className="overview">
-            <h3>Overview</h3>
-            {overview}
-          </div>
-          {/* TODO: implemet it */}
-          <div className="producers">
+          <div className="bannerInfo">
+            <h3>
+              {/* TODO: split date to only year */}
+              {title}&nbsp;({release_date})
+            </h3>
+            <div className="details">
+              {/* TODO: Use suitable Icons for Adult */}
+              <span className="adult">{!adult ? "R" : "X"}&nbsp;&bull;</span>
+              <span className="releaseDate">{release_date}</span>
+              <span className="country">
+                &nbsp; (
+                {production_countries && production_countries[0].iso_3166_1}
+                )&nbsp;&bull;
+              </span>
+              <span className="genere">
+                {genres &&
+                  genres.map((item) => (
+                    <span key={item.id}>&nbsp;{item.name}&nbsp;-</span>
+                  ))}
+              </span>
+              {/* Todo: Change runtime to Hour and minutes */}
+              <span className="duration">&nbsp;&bull;{runtime}m</span>
+            </div>
+            <div className="rating">
+              TMDB:{" "}
+              <span className={getColor(vote_average)}>{vote_average}</span>
+              {/* TODO: add IMDB rating */}
+            </div>
+
+            <div className="tagline">{tagline}</div>
+            <div className="overview">
+              <h3>Overview</h3>
+              {overview}
+            </div>
+            {/* TODO: implemet it */}
+            {/* <div className="producers">
             <div className="directors">
               <h3>Directors:</h3>
               <div>writer name ...</div>
@@ -123,8 +125,8 @@ function Movie() {
               <h3>Writers:</h3>
               <div>writer name ...</div>
             </div>
+          </div> */}
           </div>
-          <div className="movieInfo"></div>
         </div>
       </div>
 
