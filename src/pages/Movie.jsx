@@ -130,10 +130,10 @@ function Movie() {
         </div>
       </div>
 
-      <div className="body">
+      {/* <div className="body">
         <div className="movieSidebar">SideBar</div>
         <div className="moviePannel"></div>
-      </div>
+      </div> */}
     </div>
   );
 }
