@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Movie from "./pages/Movie";
 import Search from "./pages/Search";
+import ReleaseNotes from "./pages/ReleaseNotes";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/movie" element={<Movie />} />
         <Route path="/movie/:id" element={<Movie />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/release" element={<ReleaseNotes />} />
       </Routes>
 
       <Footer />
