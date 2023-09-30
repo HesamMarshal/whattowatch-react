@@ -7,7 +7,7 @@ function Home() {
     <>
       {/* <WatchOffer /> */}
       <NewMoviesList />
-      <NewSeriesList />
+      {/* <NewSeriesList /> */}
     </>
   );
 }
