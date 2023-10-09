@@ -66,3 +66,18 @@
 .banner .rating span.red {
   color: red;
 }
+
+/* Movie Body */
+.extraDetails {
+  display: flex;
+  flex-direction: row;
+}
+
+.extraDetails .movieSidebar {
+  min-width: 300px;
+  width: 25%;
+}
+.extraDetails .moviePannel {
+  min-width: 300px;
+  width: 70%;
+}

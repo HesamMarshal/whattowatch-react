@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Loading from "../components/Loading";
 import imagePlaceholder from "../assets/images/placeholder.jpg";
+import { getColor } from "../Utils/utils";
 
 // TMDB
 const API_KEY = "api_key=8bde9f388c6e89b90a68fdc2eaddcbf8";
@@ -12,41 +13,21 @@ const baseURL = "https://api.themoviedb.org/3";
 // const searchURL = baseURL + "/search/movie?" + API_KEY;
 const imageURL = "https://image.tmdb.org/t/p/w500/";
 
-function getColor(vote) {
-  if (vote >= 8) {
-    return "green";
-  } else if (vote >= 5) {
-    return "orange";
-  } else {
-    return "red";
-  }
-}
-
 function Movie() {
-  const { id } = useParams();
-  return <Banner id={id} />;
-}
-
-export default Movie;
-
-function Banner({ id }) {
   const [movie, setMovie] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  const { id } = useParams();
 
-  //   console.log(id);
   // onMount
   useEffect(() => {
     async function fetchMovie() {
       try {
         const movieURL = baseURL + `/movie/${id}?language=en-US;&` + API_KEY;
-
-        // const movieCreditsURL = baseURL + `/movie/${id}/credits?language=en-US`;
         const movieCreditsURL =
           "https://api.themoviedb.org/3/movie/678512/credits??language=en-US&" +
           API_KEY;
         setIsLoading(true);
         const { data } = await axios.get(movieURL);
-
         const { data: movieCredits } = await axios.get(movieCreditsURL);
         console.log(movieCredits);
         setMovie(data);
@@ -60,6 +41,24 @@ function Banner({ id }) {
     fetchMovie();
   }, []);
 
+  return (
+    <div className="singleMovie">
+      <Banner movie={movie} isLoading={isLoading} />
+      <div className="extraDetails">
+        <div className="movieSidebar">SideBar</div>
+        <div className="moviePannel">
+          <div className="movieCast">
+            <h3>Cast</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Movie;
+
+function Banner({ movie, isLoading }) {
   if (isLoading) <Loading />;
 
   const {
@@ -82,56 +81,54 @@ function Banner({ id }) {
     runtime,
   } = movie;
   return (
-    <div className="singleMovie">
-      <div className="upper">
-        <div className="banner container">
-          {/* <img
+    <div className="upper">
+      <div className="banner container">
+        {/* <img
       src={backdrop_path ? imageURL + backdrop_path : imagePlaceholder}
       alt={title}
     /> */}
-          <div className="bannerPoster">
-            <img
-              src={poster_path ? imageURL + poster_path : imagePlaceholder}
-              alt={title}
-            />
+        <div className="bannerPoster">
+          <img
+            src={poster_path ? imageURL + poster_path : imagePlaceholder}
+            alt={title}
+          />
+        </div>
+
+        <div className="bannerInfo">
+          <h3>
+            {/* TODO: split date to only year */}
+            {title}&nbsp;({release_date})
+          </h3>
+          <div className="details">
+            {/* TODO: Use suitable Icons for Adult */}
+            <span className="adult">{!adult ? "R" : "X"}&nbsp;&bull;</span>
+            <span className="releaseDate">{release_date}</span>
+            <span className="country">
+              &nbsp; (
+              {production_countries && production_countries[0].iso_3166_1}
+              )&nbsp;&bull;
+            </span>
+            <span className="genere">
+              {genres &&
+                genres.map((item) => (
+                  <span key={item.id}>&nbsp;{item.name}&nbsp;-</span>
+                ))}
+            </span>
+            {/* Todo: Change runtime to Hour and minutes */}
+            <span className="duration">&nbsp;&bull;{runtime}m</span>
+          </div>
+          <div className="rating">
+            TMDB: <span className={getColor(vote_average)}>{vote_average}</span>
+            {/* TODO: add IMDB rating */}
           </div>
 
-          <div className="bannerInfo">
-            <h3>
-              {/* TODO: split date to only year */}
-              {title}&nbsp;({release_date})
-            </h3>
-            <div className="details">
-              {/* TODO: Use suitable Icons for Adult */}
-              <span className="adult">{!adult ? "R" : "X"}&nbsp;&bull;</span>
-              <span className="releaseDate">{release_date}</span>
-              <span className="country">
-                &nbsp; (
-                {production_countries && production_countries[0].iso_3166_1}
-                )&nbsp;&bull;
-              </span>
-              <span className="genere">
-                {genres &&
-                  genres.map((item) => (
-                    <span key={item.id}>&nbsp;{item.name}&nbsp;-</span>
-                  ))}
-              </span>
-              {/* Todo: Change runtime to Hour and minutes */}
-              <span className="duration">&nbsp;&bull;{runtime}m</span>
-            </div>
-            <div className="rating">
-              TMDB:{" "}
-              <span className={getColor(vote_average)}>{vote_average}</span>
-              {/* TODO: add IMDB rating */}
-            </div>
-
-            <div className="tagline">{tagline}</div>
-            <div className="overview">
-              <h3>Overview</h3>
-              {overview}
-            </div>
-            {/* TODO: implemet it */}
-            {/* <div className="producers">
+          <div className="tagline">{tagline}</div>
+          <div className="overview">
+            <h3>Overview</h3>
+            {overview}
+          </div>
+          {/* TODO: implemet it */}
+          {/* <div className="producers">
         <div className="directors">
           <h3>Directors:</h3>
           <div>writer name ...</div>
@@ -141,14 +138,10 @@ function Banner({ id }) {
           <div>writer name ...</div>
         </div>
       </div> */}
-          </div>
         </div>
       </div>
-
-      {/* <div className="body">
-    <div className="movieSidebar">SideBar</div>
-    <div className="moviePannel"></div>
-  </div> */}
     </div>
   );
 }
+
+function Cast({ id }) {}
