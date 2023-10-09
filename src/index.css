@@ -114,6 +114,16 @@ button:disabled {
   max-width: 1280px;
 }
 
+ol {
+  display: block;
+  list-style-type: decimal;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     /* color: #213547; */

@@ -81,3 +81,78 @@
   min-width: 300px;
   width: 70%;
 }
+
+/* .movieCast {
+  display: flex;
+} */
+ol.people {
+  list-style-type: none;
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  /* position: relative; */
+  /* top: 0; */
+  /* left: 0; */
+}
+/* .character img {
+  width: 100%;
+} */
+
+ol.people.scroller {
+  /* -webkit-overflow-scrolling: touch; */
+  /* overflow-y: hidden; */
+  /* overflow-x: scroll; */
+  margin-left: -10px;
+  margin-top: -10px;
+  padding-bottom: 10px;
+}
+
+.card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(227, 227, 227, 1);
+  background-color: #fff;
+  min-width: 140px;
+  width: 140px;
+  /* border: 1px solid blue; */
+  margin: 10px 4px 10px 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.peopleImg {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+  border: 0;
+}
+ol.people li > a {
+  min-width: 138px;
+  width: 100%;
+  height: 175px;
+  display: block;
+  /* border: 1px solid red; */
+}
+a img,
+img {
+  outline: 0;
+}
+ol.people li img {
+  width: 100%;
+  height: 100%;
+}
+
+ol.people li p {
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* border: 1px solid red; */
+  padding: 0 10px;
+}
+ol.people li .character {
+  color: #000;
+  font-size: 0.9em;
+  padding: 0 10px;
+}
