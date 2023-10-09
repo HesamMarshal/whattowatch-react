@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Footer() {
   return (
     <div id="footer">
@@ -6,7 +8,9 @@ function Footer() {
           Developed by{" "}
           <a href="https://hesammarshal.ir">Hesam Marshal Akrami</a>
         </div>
-        <div>Release 0.01 </div>
+        <div>
+          <Link to="/release">Release 0.01</Link>
+        </div>
       </div>
     </div>
   );
