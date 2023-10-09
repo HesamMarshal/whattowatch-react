@@ -23,18 +23,32 @@ function getColor(vote) {
 }
 
 function Movie() {
+  const { id } = useParams();
+  return <Banner id={id} />;
+}
+
+export default Movie;
+
+function Banner({ id }) {
   const [movie, setMovie] = useState({});
   const [isLoading, setIsLoading] = useState(false);
-  const { id } = useParams();
+
   //   console.log(id);
   // onMount
   useEffect(() => {
     async function fetchMovie() {
       try {
         const movieURL = baseURL + `/movie/${id}?language=en-US;&` + API_KEY;
+
+        // const movieCreditsURL = baseURL + `/movie/${id}/credits?language=en-US`;
+        const movieCreditsURL =
+          "https://api.themoviedb.org/3/movie/678512/credits??language=en-US&" +
+          API_KEY;
         setIsLoading(true);
         const { data } = await axios.get(movieURL);
-        // console.log(data);
+
+        const { data: movieCredits } = await axios.get(movieCreditsURL);
+        console.log(movieCredits);
         setMovie(data);
       } catch (error) {
         console.log(error);
@@ -47,6 +61,7 @@ function Movie() {
   }, []);
 
   if (isLoading) <Loading />;
+
   const {
     id: tmdb,
     title,
@@ -71,9 +86,9 @@ function Movie() {
       <div className="upper">
         <div className="banner container">
           {/* <img
-          src={backdrop_path ? imageURL + backdrop_path : imagePlaceholder}
-          alt={title}
-        /> */}
+      src={backdrop_path ? imageURL + backdrop_path : imagePlaceholder}
+      alt={title}
+    /> */}
           <div className="bannerPoster">
             <img
               src={poster_path ? imageURL + poster_path : imagePlaceholder}
@@ -117,25 +132,23 @@ function Movie() {
             </div>
             {/* TODO: implemet it */}
             {/* <div className="producers">
-            <div className="directors">
-              <h3>Directors:</h3>
-              <div>writer name ...</div>
-            </div>
-            <div className="writers">
-              <h3>Writers:</h3>
-              <div>writer name ...</div>
-            </div>
-          </div> */}
+        <div className="directors">
+          <h3>Directors:</h3>
+          <div>writer name ...</div>
+        </div>
+        <div className="writers">
+          <h3>Writers:</h3>
+          <div>writer name ...</div>
+        </div>
+      </div> */}
           </div>
         </div>
       </div>
 
       {/* <div className="body">
-        <div className="movieSidebar">SideBar</div>
-        <div className="moviePannel"></div>
-      </div> */}
+    <div className="movieSidebar">SideBar</div>
+    <div className="moviePannel"></div>
+  </div> */}
     </div>
   );
 }
-
-export default Movie;
