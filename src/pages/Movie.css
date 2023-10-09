@@ -91,18 +91,18 @@ ol.people {
   margin: 0;
   padding: 0;
   display: flex;
-  /* position: relative; */
-  /* top: 0; */
-  /* left: 0; */
+  position: relative;
+  top: 0;
+  left: 0;
 }
 /* .character img {
   width: 100%;
 } */
 
 ol.people.scroller {
-  /* -webkit-overflow-scrolling: touch; */
-  /* overflow-y: hidden; */
-  /* overflow-x: scroll; */
+  -webkit-overflow-scrolling: touch;
+  overflow-y: hidden;
+  overflow-x: scroll;
   margin-left: -10px;
   margin-top: -10px;
   padding-bottom: 10px;
