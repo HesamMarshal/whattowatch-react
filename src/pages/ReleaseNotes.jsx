@@ -5,7 +5,10 @@ function ReleaseNotes() {
     <section id="release">
       <div className="release">
         <h3>Version 0.1.0</h3>
-        <p></p>
+        <ul>
+          <li>Add cast of a movie</li>
+          <li>Add Logo and Favicon</li>
+        </ul>
       </div>
       <div className="release">
         <h3>Version 0.01</h3>
