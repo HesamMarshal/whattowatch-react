@@ -3,6 +3,7 @@ import { BsSearch } from "react-icons/bs";
 import { MdLocationOn } from "react-icons/md";
 import { HiCalendar, HiMinus, HiPlus, HiSearch } from "react-icons/hi";
 import { Link, createSearchParams, useNavigate } from "react-router-dom";
+import logo from "../assets/images/logo.png";
 
 function Header() {
   const [search, setSearch] = useState("");
@@ -20,7 +21,12 @@ function Header() {
     <div className="header">
       <div className="headerSearch">
         <div className="headerSearchItem">
-          <Link to="/">What To Watch</Link>
+          <Link to="/">
+            <img src={logo} className="logo" />
+          </Link>
+          <Link to="/">
+            <span className="siteName">What To Watch</span>
+          </Link>
           <span className="separator"></span>
         </div>
         <div className="headerSearchItem">
