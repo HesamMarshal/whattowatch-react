@@ -15,6 +15,7 @@ const imageURL = "https://image.tmdb.org/t/p/w500/";
 
 function Movie() {
   const [movie, setMovie] = useState({});
+  const [casts, setCasts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const { id } = useParams();
 
@@ -24,13 +25,16 @@ function Movie() {
       try {
         const movieURL = baseURL + `/movie/${id}?language=en-US;&` + API_KEY;
         const movieCreditsURL =
-          "https://api.themoviedb.org/3/movie/678512/credits??language=en-US&" +
-          API_KEY;
+          baseURL + `/movie/${id}/credits??language=en-US&` + API_KEY;
         setIsLoading(true);
+
         const { data } = await axios.get(movieURL);
-        const { data: movieCredits } = await axios.get(movieCreditsURL);
-        console.log(movieCredits);
+
         setMovie(data);
+
+        const { data: movieCredits } = await axios.get(movieCreditsURL);
+        setCasts(movieCredits.cast);
+        // console.log(movieCredits.cast);
       } catch (error) {
         console.log(error);
       } finally {
@@ -47,9 +51,7 @@ function Movie() {
       <div className="extraDetails">
         <div className="movieSidebar">SideBar</div>
         <div className="moviePannel">
-          <div className="movieCast">
-            <h3>Cast</h3>
-          </div>
+          <Casts casts={casts} />
         </div>
       </div>
     </div>
@@ -144,4 +146,43 @@ function Banner({ movie, isLoading }) {
   );
 }
 
-function Cast({ id }) {}
+function Casts({ casts }) {
+  return (
+    <div>
+      <h3>Cast</h3>
+      <ol className="people scroller">
+        {casts.map((c) => {
+          const {
+            adult,
+            cast_id,
+            character,
+            gender,
+            id,
+            known_for_department,
+            name,
+            original_name,
+            profile_path,
+          } = c;
+          return (
+            <li key={cast_id} className="card">
+              <a>
+                <img
+                  className="peopleImg"
+                  loading="lazy"
+                  src={
+                    profile_path ? imageURL + profile_path : imagePlaceholder
+                  }
+                  alt={name}
+                />
+              </a>
+              <p>
+                <a href="">{name}</a>
+              </p>
+              <p className="character">{character}</p>
+            </li>
+          );
+        })}
+      </ol>
+    </div>
+  );
+}
