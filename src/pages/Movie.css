@@ -45,7 +45,14 @@
   /* display: flex; */
   /* flex-direction: start; */
 }
-
+.adult {
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 1px 5px;
+}
+.tagline {
+  font-style: italic;
+}
 .banner .producers {
   display: flex;
   /* justify-content: spa; */
