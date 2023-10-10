@@ -17,6 +17,8 @@ const imageURL = "https://image.tmdb.org/t/p/w500/";
 function Movie() {
   const [movie, setMovie] = useState({});
   const [casts, setCasts] = useState([]);
+  const [directors, setDirectors] = useState([]);
+  const [writers, setWriters] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const { id } = useParams();
 
@@ -30,13 +32,17 @@ function Movie() {
         setIsLoading(true);
 
         const { data } = await axios.get(movieURL);
-        console.log(data);
+        // console.log(data);
 
         setMovie(data);
 
         const { data: movieCredits } = await axios.get(movieCreditsURL);
         setCasts(movieCredits.cast);
-        console.log(movieCredits);
+        setDirectors(
+          movieCredits.crew.filter((item) => item.job === "Director")
+        );
+        setWriters(movieCredits.crew.filter((item) => item.job === "Writer"));
+        console.log(movieCredits.crew.filter((item) => item.job === "Writer"));
         // console.log(movieCredits.cast);
       } catch (error) {
         console.log(error);
@@ -50,7 +56,12 @@ function Movie() {
 
   return (
     <div className="singleMovie">
-      <Banner movie={movie} isLoading={isLoading} />
+      <Banner
+        movie={movie}
+        isLoading={isLoading}
+        directors={directors}
+        writers={writers}
+      />
       <div className="extraDetails">
         <div className="movieSidebar">SideBar</div>
         <div className="moviePannel">
@@ -63,7 +74,7 @@ function Movie() {
 
 export default Movie;
 
-function Banner({ movie, isLoading }) {
+function Banner({ movie, isLoading, directors, writers }) {
   if (isLoading) <Loading />;
 
   const {
@@ -132,17 +143,25 @@ function Banner({ movie, isLoading }) {
             <h3>Overview</h3>
             {overview}
           </div>
-          {/* TODO: implemet it */}
-          {/* <div className="producers">
-        <div className="directors">
-          <h3>Directors:</h3>
-          <div>writer name ...</div>
-        </div>
-        <div className="writers">
-          <h3>Writers:</h3>
-          <div>writer name ...</div>
-        </div>
-      </div> */}
+
+          <div className="producers">
+            <div className="directors">
+              <h3>Directors:</h3>
+              <div>
+                {directors.map((director) => (
+                  <span key={director.id}>{director.name} &nbsp;</span>
+                ))}
+              </div>
+            </div>
+            <div className="writers">
+              <h3>Writers:</h3>
+              <div>
+                {writers.map((writer) => (
+                  <span key={writer.id}>{writer.name} &nbsp;</span>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
