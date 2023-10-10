@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Loading from "../components/Loading";
 import imagePlaceholder from "../assets/images/placeholder.jpg";
+import peoplePlaceholder from "../assets/images/peoplePlaceholder.svg";
 import { getColor } from "../Utils/utils";
 
 // TMDB
@@ -29,11 +30,13 @@ function Movie() {
         setIsLoading(true);
 
         const { data } = await axios.get(movieURL);
+        console.log(data);
 
         setMovie(data);
 
         const { data: movieCredits } = await axios.get(movieCreditsURL);
         setCasts(movieCredits.cast);
+        console.log(movieCredits);
         // console.log(movieCredits.cast);
       } catch (error) {
         console.log(error);
@@ -170,7 +173,7 @@ function Casts({ casts }) {
                   className="peopleImg"
                   loading="lazy"
                   src={
-                    profile_path ? imageURL + profile_path : imagePlaceholder
+                    profile_path ? imageURL + profile_path : peoplePlaceholder
                   }
                   alt={name}
                 />
