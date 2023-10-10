@@ -42,7 +42,7 @@ function Movie() {
           movieCredits.crew.filter((item) => item.job === "Director")
         );
         setWriters(movieCredits.crew.filter((item) => item.job === "Writer"));
-        console.log(movieCredits.crew.filter((item) => item.job === "Writer"));
+        // console.log(movieCredits.crew.filter((item) => item.job === "Writer"));
         // console.log(movieCredits.cast);
       } catch (error) {
         console.log(error);
@@ -63,7 +63,7 @@ function Movie() {
         writers={writers}
       />
       <div className="extraDetails">
-        <div className="movieSidebar">SideBar</div>
+        <div className="movieSidebar"></div>
         <div className="moviePannel">
           <Casts casts={casts} />
         </div>
@@ -117,7 +117,7 @@ function Banner({ movie, isLoading, directors, writers }) {
           </h3>
           <div className="details">
             {/* TODO: Use suitable Icons for Adult */}
-            <span className="adult">{!adult ? "R" : "X"}&nbsp;&bull;</span>
+            <span className="adult">{!adult ? "R" : "X"}</span>&nbsp;&bull;
             <span className="releaseDate">{release_date}</span>
             <span className="country">
               &nbsp; (
@@ -134,7 +134,8 @@ function Banner({ movie, isLoading, directors, writers }) {
             <span className="duration">&nbsp;&bull;{runtime}m</span>
           </div>
           <div className="rating">
-            TMDB: <span className={getColor(vote_average)}>{vote_average}</span>
+            Score:{" "}
+            <span className={getColor(vote_average)}>{vote_average}</span>
             {/* TODO: add IMDB rating */}
           </div>
 
