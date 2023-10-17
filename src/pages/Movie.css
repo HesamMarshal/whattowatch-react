@@ -121,7 +121,6 @@ ol.people.scroller {
   background-color: #fff;
   min-width: 140px;
   width: 140px;
-  /* border: 1px solid blue; */
   margin: 10px 4px 10px 10px;
   border-radius: 8px;
   overflow: hidden;
@@ -138,7 +137,6 @@ ol.people li > a {
   width: 100%;
   height: 175px;
   display: block;
-  /* border: 1px solid red; */
 }
 a img,
 img {
