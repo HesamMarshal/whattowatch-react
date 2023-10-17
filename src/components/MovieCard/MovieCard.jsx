@@ -16,8 +16,10 @@ function MovieCard({ movie }) {
           alt={title}
         />
         <div className="movieInfo">
-          <h3>{title}</h3>
-          <span className={getColor(vote_average)}>{vote_average}</span>
+          <h3 className="movieTitle">{title}</h3>
+          <span className={`rating ${getColor(vote_average)}`}>
+            {vote_average}
+          </span>
           <div className="overview">
             <h3>Overview</h3>
             {overview}

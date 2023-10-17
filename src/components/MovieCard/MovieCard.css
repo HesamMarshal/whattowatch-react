@@ -16,8 +16,7 @@
   right: 0;
   bottom: 0;
   background-color: aliceblue;
-  /* color: var(--color-black); */
-  color: black;
+  color: var(--color-black);
   padding: 1rem;
   max-height: 100%;
   transform: translateY(100%);
@@ -26,7 +25,9 @@
 .movie:hover .overview {
   transform: translateY(0);
 }
-
+.movie .overview h3 {
+  color: var(--color-black);
+}
 .movieInfo {
   /* color: aliceblue; */
   display: flex;
@@ -38,6 +39,15 @@
 }
 .movieInfo h3 {
   margin-top: 0;
+}
+.movieInfo .movieTitle {
+  width: 200px;
+  height: 65px;
+  overflow: hidden;
+}
+.movieInfo .rating {
+  height: 65px;
+  /* display: flex; */
 }
 .movieInfo span {
   background-color: var(--primary-color);
