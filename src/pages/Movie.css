@@ -3,13 +3,13 @@
 }
 
 .singleMovie .upper {
-  background-color: var(--primary-color);
+  background-color: var(--color-primary);
+  background-image: var(--gradient2);
   min-height: 350px;
   display: flex;
   justify-content: center;
 }
 .singleMovie .banner {
-  /* border: 1px solid red; */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -20,8 +20,7 @@
   margin: 1rem;
   border-radius: 3px;
   box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
-  background-color: #457b9d;
-  background-color: var(--secondary-color);
+  background-color: var(--color-primary);
   position: relative;
   overflow: hidden;
   /* border: 1px solid red; */
@@ -40,6 +39,10 @@
   padding: 0.5rem 1rem 1rem;
   letter-spacing: 0.5px;
   margin: 1rem;
+}
+
+.banner .bannerInfo .movieTitle {
+  color: var(--color-secondary);
 }
 .banner .details {
   /* display: flex; */
@@ -153,11 +156,14 @@ ol.people li p {
   padding: 0;
   overflow: hidden;
   text-overflow: ellipsis;
-  /* border: 1px solid red; */
+
   padding: 0 10px;
 }
+ol.people li .actorName a {
+  color: var(--color-primary);
+}
 ol.people li .character {
-  color: #000;
+  color: var(--color-primary);
   font-size: 0.9em;
   padding: 0 10px;
 }

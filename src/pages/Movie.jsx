@@ -111,7 +111,7 @@ function Banner({ movie, isLoading, directors, writers }) {
         </div>
 
         <div className="bannerInfo">
-          <h3>
+          <h3 className="movieTitle">
             {/* TODO: split date to only year */}
             {title}&nbsp;({release_date})
           </h3>
@@ -198,7 +198,7 @@ function Casts({ casts }) {
                   alt={name}
                 />
               </a>
-              <p>
+              <p className="actorName">
                 <a href="">{name}</a>
               </p>
               <p className="character">{character}</p>
