@@ -55,3 +55,12 @@
   height: 1.5rem;
   display: inline-block;
 }
+.headerSearchBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-600);
+  color: #fff;
+  padding: 0.6rem;
+  border-radius: 1rem;
+}
