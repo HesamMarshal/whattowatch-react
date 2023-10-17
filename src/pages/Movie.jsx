@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import Loading from "../components/Loading";
 import imagePlaceholder from "../assets/images/placeholder.jpg";
 import peoplePlaceholder from "../assets/images/peoplePlaceholder.svg";
-import { getColor, onlyYear } from "../Utils/utils";
+import { getColor, onlyYear, hourMinutes } from "../Utils/utils";
 
 // TMDB
 const API_KEY = "api_key=8bde9f388c6e89b90a68fdc2eaddcbf8";
@@ -97,6 +97,8 @@ function Banner({ movie, isLoading, directors, writers }) {
     runtime,
   } = movie;
 
+  const hourMin = hourMinutes(runtime);
+
   return (
     <div className="upper">
       <div className="banner container">
@@ -118,7 +120,7 @@ function Banner({ movie, isLoading, directors, writers }) {
           <div className="details">
             {/* TODO: Use suitable Icons for Adult */}
             <span className="adult">{!adult ? "R" : "X"}</span>&nbsp;&bull;
-            <span className="releaseDate">{release_date}</span>
+            <span className="releaseDate">&nbsp;{release_date}</span>
             <span className="country">
               &nbsp; (
               {production_countries && production_countries[0].iso_3166_1}
@@ -127,15 +129,18 @@ function Banner({ movie, isLoading, directors, writers }) {
             <span className="genere">
               {genres &&
                 genres.map((item) => (
-                  <span key={item.id}>&nbsp;{item.name}&nbsp;-</span>
+                  <span key={item.id}>&nbsp;{item.name}&nbsp;</span>
                 ))}
             </span>
-            {/* Todo: Change runtime to Hour and minutes */}
-            <span className="duration">&nbsp;&bull;{runtime}m</span>
+            <span className="duration">
+              &nbsp;&bull; {hourMin && hourMin.hour}:{hourMin && hourMin.mins}
+            </span>
           </div>
           <div className="rating">
             Score:{" "}
-            <span className={getColor(vote_average)}>{vote_average}</span>
+            <span className={getColor(vote_average)}>
+              {vote_average && vote_average.toFixed(2)}
+            </span>
             {/* TODO: add IMDB rating */}
           </div>
 
