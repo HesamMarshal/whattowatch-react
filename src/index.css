@@ -43,6 +43,8 @@
   --main-red: #be3144;
   --br-sm-2: 14px;
   --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.3);
+  --gradient1: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+  --gradient2: linear-gradient(62deg, #181719 0%, #3a3d40 100%);
 }
 
 body {
