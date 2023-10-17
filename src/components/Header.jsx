@@ -1,3 +1,4 @@
+import "./header.css";
 import { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import { MdLocationOn } from "react-icons/md";
