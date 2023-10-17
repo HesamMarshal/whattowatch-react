@@ -8,10 +8,11 @@
 }
 
 :root {
+}
+
+:root {
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
     Helvetica Neue, sans-serif;
-  /* line-height: 1.5; */
-  /* font-weight: 400; */
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -25,57 +26,50 @@
 
   /* Color Define */
 
-  /* --primary-color: #22254b; */
-
-  /* --secondary-color: #373b69; */
-  /* --opposite-color: #FCEFF9; */
-
-  --primary-color: #1d3557;
-  --secondary-color: #457b9d;
-  --opposite-color: #fceff9;
-
-  /* --background-color: #454851; */
-  /* --secondary-color: #73956F; */
-  /* --third-color: #7BAE7F; */
-  /* --forth-color: #95D7AE; */
-  /* --opposite-color: #FCEFF9; */
-
-  --background-color: #1d3557;
-  --secondary-color: #457b9d;
-  --third-color: #a8dadc;
-  --forth-color: #f1faee;
-  --opposite-color: #e63946;
-
-  /* Upper from old */
-
-  --bg-color: #f3f4f6;
-  --text-700: #374151;
-  --text-400: #94a3b8;
-  --text-500: #64748b;
-  --text-100: #f1f5f9;
-  --text-300: #d1d5db;
-  --white: #fff;
-  --primary-700: #4338ca;
-  --primary-600: #4f46e5;
-  --primary-100: #e0e7ff;
-  --rose-500: #f43f5e;
+  /* HesamMarshal.ir */
+  --color-primary: #191d2b;
+  --color-secondary: #27ae60;
+  --color-icon: #b2becd;
+  --color-active-icon: #ffffff;
+  --color-white: #ffffff;
+  --color-black: #000;
+  --color-grey0: #f8f8f8;
+  --color-grey-1: #dbe1e8;
+  --color-grey-2: #b2becd;
+  --color-grey-3: #6c7983;
+  --color-grey-4: #454e56;
+  --color-grey-5: #2a2e35;
+  --color-grey-6: #12181b;
+  --main-red: #be3144;
+  --br-sm-2: 14px;
+  --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.3);
 }
+
 body {
   margin: 0;
   /* display: flex; */
   min-width: 320px;
   min-height: 100vh;
   /* padding: 1rem; */
-  background-color: var(--secondary-color);
+
+  background-color: var(--color-primary);
+  background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
+  color: var(--color-white);
+  transition: all 0.4s ease-in-out;
 }
 a {
   font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  color: inherit;
+  font-family: inherit;
+  cursor: pointer;
   /* color: #646cff; */
   /* color: inherit; */
-  text-decoration: none;
-  /* text-decoration: inherit; */
-  cursor: pointer;
 }
+
 a:hover {
   /* color: #535bf2; */
 }
