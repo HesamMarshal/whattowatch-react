@@ -27,6 +27,14 @@ export function getColor(vote) {
 }
 
 export function onlyYear(dateString) {
+  if (!dateString) return;
   const splited = dateString.split("-");
   return splited[0];
+}
+export function hourMinutes(minutes) {
+  if (!minutes) return;
+  const hour = Math.floor(minutes / 60);
+  // console.log(hour);
+  const mins = minutes % 60;
+  return { hour, mins };
 }
