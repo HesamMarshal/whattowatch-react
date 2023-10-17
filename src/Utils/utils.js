@@ -15,6 +15,7 @@ export const multiSearchURL = BASE_URL + "/search/multi?" + API_KEY;
 // export const movieCredits =
 //   BASE_URL + "/movie/movie_id/credits?language=en-US';";
 
+// TODO: Change to goodMovie, badMovie, fairMovie
 export function getColor(vote) {
   if (vote >= 8) {
     return "green";
@@ -23,4 +24,9 @@ export function getColor(vote) {
   } else {
     return "red";
   }
+}
+
+export function onlyYear(dateString) {
+  const splited = dateString.split("-");
+  return splited[0];
 }

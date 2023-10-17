@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import Loading from "../components/Loading";
 import imagePlaceholder from "../assets/images/placeholder.jpg";
 import peoplePlaceholder from "../assets/images/peoplePlaceholder.svg";
-import { getColor } from "../Utils/utils";
+import { getColor, onlyYear } from "../Utils/utils";
 
 // TMDB
 const API_KEY = "api_key=8bde9f388c6e89b90a68fdc2eaddcbf8";
@@ -96,6 +96,7 @@ function Banner({ movie, isLoading, directors, writers }) {
     production_countries,
     runtime,
   } = movie;
+
   return (
     <div className="upper">
       <div className="banner container">
@@ -112,8 +113,7 @@ function Banner({ movie, isLoading, directors, writers }) {
 
         <div className="bannerInfo">
           <h3 className="movieTitle">
-            {/* TODO: split date to only year */}
-            {title}&nbsp;({release_date})
+            {title}&nbsp;({onlyYear(release_date)})
           </h3>
           <div className="details">
             {/* TODO: Use suitable Icons for Adult */}
