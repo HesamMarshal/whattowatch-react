@@ -68,10 +68,10 @@
 }
 
 .banner .rating span.green {
-  color: rgb(8, 95, 8);
+  color: #085f08;
 }
 .banner .rating span.orange {
-  color: orange;
+  color: #ffa500;
 }
 .banner .rating span.red {
   color: red;
