@@ -2,9 +2,9 @@ import "./MovieBanner.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-import Loading from "../../components/Loading";
-import MovieCard from "../../components/MovieCard/MovieCard";
-import { movieURL } from "../../Utils/utils";
+import Loading from "../../../components/Loading";
+import MovieCard from "../../../components/MovieCard/MovieCard";
+import { movieURL } from "../../../Utils/utils";
 import { Link } from "react-router-dom";
 
 function MovieBanner() {
