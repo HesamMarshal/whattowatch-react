@@ -46,7 +46,6 @@ function SeriesBanner() {
       try {
         setIsLoading(true);
         const { data } = await axios.get(seriesURL, config);
-
         setSeries(data.splice(0, 4));
       } catch (error) {
       } finally {
