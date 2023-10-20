@@ -28,7 +28,12 @@ function MovieBanner() {
     fetchMovies();
   }, []);
 
-  if (isLoading) return <Loading />;
+  if (isLoading)
+    return (
+      <section id="new-movie-list">
+        <Loading />
+      </section>
+    );
   return (
     <section id="new-movie-list">
       <div className="newMovieBox">
