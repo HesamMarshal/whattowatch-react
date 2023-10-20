@@ -31,12 +31,16 @@ function MovieBanner() {
   if (isLoading)
     return (
       <section id="new-movie-list">
-        <Loading />
+        <div className="newMovieBox">
+          <h3>Trending Movies: </h3>
+          <Loading />
+        </div>
       </section>
     );
   return (
     <section id="new-movie-list">
       <div className="newMovieBox">
+        <h3>Trending Movies: </h3>
         <div className="movieAlbum">
           {movies.map((movie) => {
             return <MovieCard key={movie.id} movie={movie} />;

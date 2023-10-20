@@ -60,12 +60,16 @@ function SeriesBanner() {
   if (isLoading)
     return (
       <section id="new-series-list">
-        <Loading />
+        <div className="newSeriesBox">
+          <h3>Trending Series:</h3>
+          <Loading />
+        </div>
       </section>
     );
   return (
     <section id="new-series-list">
       <div className="newSeriesBox">
+        <h3>Trending Series:</h3>
         <div className="seriesAlbum">
           {series.map((serie) => {
             return (

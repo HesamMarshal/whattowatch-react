@@ -15,8 +15,14 @@
   flex-direction: column;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  min-height: 500px;
 }
-
+.newMovieBox h3 {
+  margin: 1rem 0 0 1rem;
+}
+.newMovieBox .loading {
+  margin: 1rem 0 0 1rem;
+}
 .movieAlbum {
   display: flex;
   overflow: hidden;
