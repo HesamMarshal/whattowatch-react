@@ -2,8 +2,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* min-height: 100vh; */
-  background-color: white;
 }
 .newMovieBox {
   background: #7f1d1d;
@@ -31,7 +29,7 @@
 .showMore {
   display: flex;
   justify-content: flex-end;
-  align-items: centr;
+  align-items: center;
   padding-right: 1rem;
   font-weight: 700;
   font-size: large;
