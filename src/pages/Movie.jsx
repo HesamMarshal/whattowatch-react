@@ -176,8 +176,8 @@ function Banner({ movie, isLoading, directors, writers }) {
 
 function Casts({ casts }) {
   return (
-    <div>
-      <h3>Cast</h3>
+    <div className="cast">
+      <h3>Cast:</h3>
       <ol className="people scroller">
         {casts.map((c) => {
           const {

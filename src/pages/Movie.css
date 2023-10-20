@@ -92,6 +92,10 @@
   width: 70%;
 }
 
+.cast h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
 /* .movieCast {
   display: flex;
 } */
@@ -101,6 +105,7 @@ ol.people {
   margin: 0;
   padding: 0;
   display: flex;
+
   position: relative;
   top: 0;
   left: 0;
