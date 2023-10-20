@@ -1,0 +1,33 @@
+#new-series-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* min-height: 100vh; */
+  /* background-color: white; */
+}
+.newSeriesBox {
+  background: rgb(44, 16, 99);
+  background: var(--seriesBannerGradient);
+  border-radius: 25px;
+  min-width: 1280px;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.seriesAlbum {
+  display: flex;
+  overflow: hidden;
+  padding-bottom: 0;
+}
+.showMore {
+  display: flex;
+  justify-content: flex-end;
+  align-items: centr;
+  padding-right: 1rem;
+  font-weight: 700;
+  font-size: large;
+  margin-bottom: 1rem;
+}
