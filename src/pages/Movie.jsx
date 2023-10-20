@@ -19,6 +19,7 @@ function Movie() {
   const [casts, setCasts] = useState([]);
   const [directors, setDirectors] = useState([]);
   const [writers, setWriters] = useState([]);
+  const [watchProvider, setWatchProvider] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const { id } = useParams();
 
@@ -29,6 +30,11 @@ function Movie() {
         const movieURL = baseURL + `/movie/${id}?language=en-US;&` + API_KEY;
         const movieCreditsURL =
           baseURL + `/movie/${id}/credits??language=en-US&` + API_KEY;
+
+        // https://api.themoviedb.org/3/movie/603/watch/providers
+        const watchProviderURL =
+          baseURL + `/movie/${id}/watch/providers?language=en-US;&` + API_KEY;
+
         setIsLoading(true);
 
         const { data } = await axios.get(movieURL);
@@ -42,8 +48,10 @@ function Movie() {
           movieCredits.crew.filter((item) => item.job === "Director")
         );
         setWriters(movieCredits.crew.filter((item) => item.job === "Writer"));
-        // console.log(movieCredits.crew.filter((item) => item.job === "Writer"));
-        // console.log(movieCredits.cast);
+
+        const { data: watchProviderList } = await axios.get(watchProviderURL);
+        // console.log(watchProviderList.results);
+        setWatchProvider(watchProviderList.results);
       } catch (error) {
         console.log(error);
       } finally {
@@ -63,7 +71,9 @@ function Movie() {
         writers={writers}
       />
       <div className="extraDetails">
-        <div className="movieSidebar"></div>
+        <div className="movieSidebar">
+          <WatchProvider providerList={watchProvider} />
+        </div>
         <div className="moviePannel">
           <Casts casts={casts} />
         </div>
@@ -211,6 +221,39 @@ function Casts({ casts }) {
           );
         })}
       </ol>
+    </div>
+  );
+}
+
+function WatchProvider({ providerList }) {
+  // console.log(providerList);
+  return (
+    <div className="watchProvider">
+      <h3>Watch provider</h3>
+      <div className="providersList">
+        {
+          // const  map = new Map(Object.entries(providerList));
+          Object.entries(providerList).map((provider) => {
+            // console.log(provider);
+            console.log(provider[1].buy.provider_name);
+            return (
+              <div>
+                <div>Country: {provider[0]}</div>
+                {/* <div>{provider[1]} </div> */}
+              </div>
+            );
+          })
+
+          // Object.entries(providerList).forEach(([country, value]) => {
+          //   console.log(country, value);
+          //   return (
+          //     <div>
+          //       <div>Country: {country} </div>
+          //     </div>
+          //   );
+          // })
+        }
+      </div>
     </div>
   );
 }
