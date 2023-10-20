@@ -45,6 +45,18 @@
   --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.3);
   --gradient1: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
   --gradient2: linear-gradient(62deg, #181719 0%, #3a3d40 100%);
+  --movieBannerGradient: linear-gradient(
+    90deg,
+    #7f1d1d 0%,
+    #b91c1c 30%,
+    #dc2620 100%
+  );
+  --seriesBannerGradient: linear-gradient(
+    90deg,
+    #2c1063 0%,
+    #103563 28%,
+    #2092dc 100%
+  );
 }
 
 body {
