@@ -6,7 +6,7 @@
   /* background-color: white; */
 }
 .newSeriesBox {
-  background: rgb(44, 16, 99);
+  background: #2c1063;
   background: var(--seriesBannerGradient);
   border-radius: 25px;
   min-width: 1280px;
@@ -32,7 +32,7 @@
 .showMore {
   display: flex;
   justify-content: flex-end;
-  align-items: centr;
+  align-items: center;
   padding-right: 1rem;
   font-weight: 700;
   font-size: large;
