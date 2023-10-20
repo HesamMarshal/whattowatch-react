@@ -24,9 +24,7 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  /* Color Define */
-
-  /* HesamMarshal.ir */
+  /* Color Define - HesamMarshal.ir*/
   --color-primary: #191d2b;
   --color-secondary: #27ae60;
   --color-icon: #b2becd;
@@ -47,9 +45,9 @@
   --gradient2: linear-gradient(62deg, #181719 0%, #3a3d40 100%);
   --movieBannerGradient: linear-gradient(
     90deg,
-    #7f1d1d 0%,
-    #b91c1c 30%,
-    #dc2620 100%
+    #611010 0%,
+    #951515 28%,
+    #d6261f 100%
   );
   --seriesBannerGradient: linear-gradient(
     90deg,
