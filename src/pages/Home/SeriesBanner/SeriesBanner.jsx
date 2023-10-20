@@ -7,9 +7,8 @@ import { Link } from "react-router-dom";
 
 import axios from "axios";
 
-import imagePlaceholder from "../../../assets/images/placeholder.jpg";
 import Loading from "../../../components/Loading";
-import { getColor } from "../../../Utils/utils";
+import SerieCard from "../../../components/SerieCard/SerieCard";
 
 // TMDB
 
@@ -70,7 +69,10 @@ function SeriesBanner() {
         <div className="seriesAlbum">
           {series.map((serie) => {
             return (
-              <Series tmdbId={serie.show.ids.tmdb} key={serie.show.ids.tmdb} />
+              <SerieCard
+                tmdbId={serie.show.ids.tmdb}
+                key={serie.show.ids.tmdb}
+              />
             );
           })}
         </div>
@@ -83,51 +85,3 @@ function SeriesBanner() {
 }
 
 export default SeriesBanner;
-
-function Series({ tmdbId }) {
-  const [serieInfo, setSeriesInfo] = useState({});
-
-  useEffect(() => {
-    async function fetchSerie() {
-      try {
-        const seriesUrl = baseURL + `/tv/${tmdbId}?language=en-US&` + API_KEY;
-        console.log(seriesUrl);
-        const { data } = await axios.get(seriesUrl);
-        console.log(data);
-        setSeriesInfo(data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-
-    fetchSerie();
-  }, []);
-
-  //   console.log(serieInfo);
-  const {
-    id: tmdb,
-    original_name: title,
-    poster_path,
-    vote_average,
-    overview,
-  } = serieInfo;
-  console.log(serieInfo);
-  return (
-    <div className="movie">
-      <img
-        src={poster_path ? IMG_URL + poster_path : imagePlaceholder}
-        alt={title}
-      />
-      <div className="movieInfo">
-        <h3 className="movieTitle">{title}</h3>
-        <span className={`rating ${getColor(vote_average)}`}>
-          {vote_average}
-        </span>
-        <div className="overview">
-          <h3>Overview</h3>
-          {overview}
-        </div>
-      </div>
-    </div>
-  );
-}
