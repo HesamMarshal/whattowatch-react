@@ -6,7 +6,7 @@
   background-color: white;
 }
 .newMovieBox {
-  background: rgb(127, 29, 29);
+  background: #7f1d1d;
   background: var(--movieBannerGradient);
   border-radius: 25px;
   min-width: 1280px;
