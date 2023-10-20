@@ -6,6 +6,13 @@ function ReleaseNotes() {
     <section id="releases">
       <div className="container">
         <div className="release">
+          <h3>Version 0.3.0:</h3>
+          <ol>
+            <li>Tv Show Banner</li>
+          </ol>
+        </div>
+
+        <div className="release">
           <h3>Version 0.2.0:</h3>
           <ol>
             <li>Show the score only with two decimal points</li>
