@@ -172,3 +172,32 @@ ol.people li .character {
   font-size: 0.9em;
   padding: 0 10px;
 }
+
+.watchProvider {
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.watchProvider .providersList {
+  margin-top: 1rem;
+}
+
+.providerCountry {
+  border: 1px solid var(--color-secondary);
+  margin: 1rem 1rem;
+  /* background-color: #085f08; */
+  color: black;
+  border-radius: 5px;
+  border: 1px solid #e3e3e3;
+  background-color: #b1a6a6;
+}
+.providerCountryName {
+  margin-left: 5px;
+}
+.providerLogo {
+  width: 50px;
+  aspect-ratio: auto 50 / 50;
+  height: 50px;
+  margin: 5px;
+  border-radius: 4px;
+}

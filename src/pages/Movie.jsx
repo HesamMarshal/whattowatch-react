@@ -6,6 +6,7 @@ import Loading from "../components/Loading";
 import imagePlaceholder from "../assets/images/placeholder.jpg";
 import peoplePlaceholder from "../assets/images/peoplePlaceholder.svg";
 import { getColor, onlyYear, hourMinutes } from "../Utils/utils";
+import ReactCountryFlag from "react-country-flag";
 
 // TMDB
 const API_KEY = "api_key=8bde9f388c6e89b90a68fdc2eaddcbf8";
@@ -19,6 +20,7 @@ function Movie() {
   const [casts, setCasts] = useState([]);
   const [directors, setDirectors] = useState([]);
   const [writers, setWriters] = useState([]);
+  const [watchProvider, setWatchProvider] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const { id } = useParams();
 
@@ -29,6 +31,11 @@ function Movie() {
         const movieURL = baseURL + `/movie/${id}?language=en-US;&` + API_KEY;
         const movieCreditsURL =
           baseURL + `/movie/${id}/credits??language=en-US&` + API_KEY;
+
+        // https://api.themoviedb.org/3/movie/603/watch/providers
+        const watchProviderURL =
+          baseURL + `/movie/${id}/watch/providers?language=en-US;&` + API_KEY;
+
         setIsLoading(true);
 
         const { data } = await axios.get(movieURL);
@@ -42,8 +49,10 @@ function Movie() {
           movieCredits.crew.filter((item) => item.job === "Director")
         );
         setWriters(movieCredits.crew.filter((item) => item.job === "Writer"));
-        // console.log(movieCredits.crew.filter((item) => item.job === "Writer"));
-        // console.log(movieCredits.cast);
+
+        const { data: watchProviderList } = await axios.get(watchProviderURL);
+        // console.log(watchProviderList.results);
+        setWatchProvider(watchProviderList.results);
       } catch (error) {
         console.log(error);
       } finally {
@@ -63,7 +72,9 @@ function Movie() {
         writers={writers}
       />
       <div className="extraDetails">
-        <div className="movieSidebar"></div>
+        <div className="movieSidebar">
+          <WatchProvider providerList={watchProvider} />
+        </div>
         <div className="moviePannel">
           <Casts casts={casts} />
         </div>
@@ -211,6 +222,42 @@ function Casts({ casts }) {
           );
         })}
       </ol>
+    </div>
+  );
+}
+
+function WatchProvider({ providerList }) {
+  return (
+    <div className="watchProvider">
+      <h3>Watch provider</h3>
+      <div className="providersList">
+        {Object.entries(providerList).map((provider) => {
+          const rentProvider = provider[1].rent;
+
+          return (
+            <div key={provider[0]} className="providerCountry">
+              <div className="providerCountryName">
+                Country:{" "}
+                <ReactCountryFlag
+                  svg
+                  countryCode={provider[0]}
+                  alt={provider[0]}
+                />
+              </div>
+              <div className="rentProvider">
+                {rentProvider?.map((rent) => (
+                  <img
+                    className="providerLogo"
+                    src={imageURL + rent.logo_path}
+                    alt={rent.provider_name}
+                    key={rent.provider_name}
+                  />
+                ))}
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
