@@ -1,12 +1,14 @@
 import "./Movie.css";
 import axios from "axios";
+import ReactCountryFlag from "react-country-flag";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Loading from "../components/Loading";
+import { getColor, onlyYear, hourMinutes } from "../Utils/utils";
+
 import imagePlaceholder from "../assets/images/placeholder.jpg";
 import peoplePlaceholder from "../assets/images/peoplePlaceholder.svg";
-import { getColor, onlyYear, hourMinutes } from "../Utils/utils";
-import ReactCountryFlag from "react-country-flag";
+import justWatch from "../assets/images/justwatch-logo.svg";
 
 // TMDB
 const API_KEY = "api_key=8bde9f388c6e89b90a68fdc2eaddcbf8";
@@ -229,7 +231,8 @@ function Casts({ casts }) {
 function WatchProvider({ providerList }) {
   return (
     <div className="watchProvider">
-      <h3>Watch provider</h3>
+      {/* <h3>Watch provider</h3> */}
+      <img src={justWatch} alt="justWatch" className="justWatch" />
       <div className="providersList">
         {Object.entries(providerList).map((provider) => {
           const rentProvider = provider[1].rent;

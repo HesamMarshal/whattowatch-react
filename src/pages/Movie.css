@@ -178,6 +178,9 @@ ol.people li .character {
   margin-left: 1rem;
 }
 
+.justWatch {
+  width: 150px;
+}
 .watchProvider .providersList {
   margin-top: 1rem;
 }
