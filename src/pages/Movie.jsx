@@ -6,6 +6,7 @@ import Loading from "../components/Loading";
 import imagePlaceholder from "../assets/images/placeholder.jpg";
 import peoplePlaceholder from "../assets/images/peoplePlaceholder.svg";
 import { getColor, onlyYear, hourMinutes } from "../Utils/utils";
+import ReactCountryFlag from "react-country-flag";
 
 // TMDB
 const API_KEY = "api_key=8bde9f388c6e89b90a68fdc2eaddcbf8";
@@ -226,18 +227,23 @@ function Casts({ casts }) {
 }
 
 function WatchProvider({ providerList }) {
-  // console.log(providerList);
   return (
     <div className="watchProvider">
       <h3>Watch provider</h3>
       <div className="providersList">
         {Object.entries(providerList).map((provider) => {
-          console.log("provider", provider);
           const rentProvider = provider[1].rent;
 
           return (
             <div key={provider[0]} className="providerCountry">
-              <div className="providerCountryName">Country: {provider[0]}</div>
+              <div className="providerCountryName">
+                Country:{" "}
+                <ReactCountryFlag
+                  svg
+                  countryCode={provider[0]}
+                  alt={provider[0]}
+                />
+              </div>
               <div className="rentProvider">
                 {rentProvider?.map((rent) => (
                   <img
