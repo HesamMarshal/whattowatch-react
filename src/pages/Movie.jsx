@@ -231,28 +231,26 @@ function WatchProvider({ providerList }) {
     <div className="watchProvider">
       <h3>Watch provider</h3>
       <div className="providersList">
-        {
-          // const  map = new Map(Object.entries(providerList));
-          Object.entries(providerList).map((provider) => {
-            // console.log(provider);
-            console.log(provider[1].buy.provider_name);
-            return (
-              <div>
-                <div>Country: {provider[0]}</div>
-                {/* <div>{provider[1]} </div> */}
-              </div>
-            );
-          })
+        {Object.entries(providerList).map((provider) => {
+          console.log("provider", provider);
+          const rentProvider = provider[1].rent;
 
-          // Object.entries(providerList).forEach(([country, value]) => {
-          //   console.log(country, value);
-          //   return (
-          //     <div>
-          //       <div>Country: {country} </div>
-          //     </div>
-          //   );
-          // })
-        }
+          return (
+            <div key={provider[0]} className="providerCountry">
+              <div className="providerCountryName">Country: {provider[0]}</div>
+              <div className="rentProvider">
+                {rentProvider?.map((rent) => (
+                  <img
+                    className="providerLogo"
+                    src={imageURL + rent.logo_path}
+                    alt={rent.provider_name}
+                    key={rent.provider_name}
+                  />
+                ))}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

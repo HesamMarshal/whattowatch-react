@@ -167,3 +167,24 @@ ol.people li .character {
   font-size: 0.9em;
   padding: 0 10px;
 }
+
+.watchProvider {
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.watchProvider .providersList {
+  margin-top: 1rem;
+}
+
+.providerCountry {
+}
+.providerCountryName {
+}
+.providerLogo {
+  width: 50px;
+  aspect-ratio: auto 50 / 50;
+  height: 50px;
+  margin: 5px;
+  border-radius: 4px;
+}
