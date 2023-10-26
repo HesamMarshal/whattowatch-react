@@ -4,7 +4,7 @@ import { BsSearch } from "react-icons/bs";
 import { MdLocationOn } from "react-icons/md";
 import { HiCalendar, HiMinus, HiPlus, HiSearch } from "react-icons/hi";
 import { Link, createSearchParams, useNavigate } from "react-router-dom";
-import logo from "../assets/images/logo_green.png";
+import logo from "../../assets/images/logo_green.png";
 
 function Header() {
   const [search, setSearch] = useState("");
