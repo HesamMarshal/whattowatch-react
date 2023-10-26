@@ -2,11 +2,13 @@ import React from "react";
 import ReactCountryFlag from "react-country-flag";
 import justWatch from "../../assets/images/justwatch-logo.svg";
 import { imageURL } from "../../Utils/utils";
+import Loading from "../../components/Loading";
 
 function WatchProvider({ providerList }) {
+  if (Object.keys(providerList) === 0) return <Loading />;
+
   return (
     <div className="watchProvider">
-      {/* <h3>Watch provider</h3> */}
       <img src={justWatch} alt="justWatch" className="justWatch" />
       <div className="providersList">
         {Object.entries(providerList).map((provider) => {

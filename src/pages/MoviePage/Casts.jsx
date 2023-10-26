@@ -1,8 +1,10 @@
 import React from "react";
 import { imageURL } from "../../Utils/utils";
 import peoplePlaceholder from "../../assets/images/peoplePlaceholder.svg";
+import Loading from "../../components/Loading";
 
 function Casts({ casts }) {
+  if (casts.length === 0) return <Loading />;
   return (
     <div className="cast">
       <h3>Cast:</h3>
