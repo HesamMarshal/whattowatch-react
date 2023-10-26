@@ -11,8 +11,8 @@ import peoplePlaceholder from "../assets/images/peoplePlaceholder.svg";
 import justWatch from "../assets/images/justwatch-logo.svg";
 
 // TMDB
-const API_KEY = "api_key=8bde9f388c6e89b90a68fdc2eaddcbf8";
-const baseURL = "https://api.themoviedb.org/3";
+const API_KEY = import.meta.env.VITE_API_KEY;
+const baseURL = import.meta.env.VITE_BASE_URL;
 
 // const searchURL = baseURL + "/search/movie?" + API_KEY;
 const imageURL = "https://image.tmdb.org/t/p/w500/";
