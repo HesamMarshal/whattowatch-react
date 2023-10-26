@@ -4,9 +4,9 @@ import ReactCountryFlag from "react-country-flag";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import peoplePlaceholder from "../../assets/images/peoplePlaceholder.svg";
 import justWatch from "../../assets/images/justwatch-logo.svg";
 import Banner from "./Banner";
+import Casts from "./Casts";
 
 // TMDB
 const API_KEY = import.meta.env.VITE_API_KEY;
@@ -84,47 +84,6 @@ function Movie() {
 }
 
 export default Movie;
-
-function Casts({ casts }) {
-  return (
-    <div className="cast">
-      <h3>Cast:</h3>
-      <ol className="people scroller">
-        {casts.map((c) => {
-          const {
-            adult,
-            cast_id,
-            character,
-            gender,
-            id,
-            known_for_department,
-            name,
-            original_name,
-            profile_path,
-          } = c;
-          return (
-            <li key={cast_id} className="card">
-              <a>
-                <img
-                  className="peopleImg"
-                  loading="lazy"
-                  src={
-                    profile_path ? imageURL + profile_path : peoplePlaceholder
-                  }
-                  alt={name}
-                />
-              </a>
-              <p className="actorName">
-                <a href="">{name}</a>
-              </p>
-              <p className="character">{character}</p>
-            </li>
-          );
-        })}
-      </ol>
-    </div>
-  );
-}
 
 function WatchProvider({ providerList }) {
   return (
