@@ -8,6 +8,7 @@ function ReleaseNotes() {
         <div className="release">
           <h3>Version 0.4.0:</h3>
           <ol>
+            <li>Add mobile view for Home Page</li>
             <li>Add provider from just watch</li>
           </ol>
         </div>
