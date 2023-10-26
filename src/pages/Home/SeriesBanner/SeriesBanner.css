@@ -1,40 +1,85 @@
-#new-series-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  /* min-height: 100vh; */
-  /* background-color: white; */
-}
-.newSeriesBox {
-  background: #2c1063;
-  background: var(--seriesBannerGradient);
-  border-radius: 25px;
-  min-width: 1280px;
-  max-width: 1280px;
-  display: flex;
-  flex-direction: column;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  min-height: 500px;
-}
-.newSeriesBox h3 {
-  margin: 1rem 0 0 1rem;
-}
-.newSeriesBox .loading {
-  margin: 1rem 0 0 1rem;
+/* Breakpoints 600 , 700, 970, 1070, 1432 */
+
+/* Mobile View */
+@media screen and (max-width: 600px) {
+  #new-series-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .newSeriesBox {
+    background: #2c1063;
+    background: var(--seriesBannerGradient);
+    border-radius: 25px;
+    min-width: 300px;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    min-height: 200px;
+  }
+  .newSeriesBox h3 {
+    margin: 1rem 0 0 1rem;
+  }
+  .newSeriesBox .loading {
+    margin: 1rem 0 0 1rem;
+  }
+
+  .seriesAlbum {
+    display: flex;
+    overflow: hidden;
+    padding-bottom: 0;
+  }
+  .showMore {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 1rem;
+    font-weight: 700;
+    font-size: large;
+    margin-bottom: 1rem;
+  }
 }
 
-.seriesAlbum {
-  display: flex;
-  overflow: hidden;
-  padding-bottom: 0;
-}
-.showMore {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding-right: 1rem;
-  font-weight: 700;
-  font-size: large;
-  margin-bottom: 1rem;
+/* Desktop View */
+@media screen and (min-width: 601px) {
+  #new-series-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .newSeriesBox {
+    background: #2c1063;
+    background: var(--seriesBannerGradient);
+    border-radius: 25px;
+    min-width: 1280px;
+    max-width: 1280px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    min-height: 500px;
+  }
+  .newSeriesBox h3 {
+    margin: 1rem 0 0 1rem;
+  }
+  .newSeriesBox .loading {
+    margin: 1rem 0 0 1rem;
+  }
+
+  .seriesAlbum {
+    display: flex;
+    overflow: hidden;
+    padding-bottom: 0;
+  }
+  .showMore {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 1rem;
+    font-weight: 700;
+    font-size: large;
+    margin-bottom: 1rem;
+  }
 }
