@@ -3,12 +3,12 @@ import axios from "axios";
 import ReactCountryFlag from "react-country-flag";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Loading from "../components/Loading";
-import { getColor, onlyYear, hourMinutes } from "../Utils/utils";
+import Loading from "../../components/Loading";
+import { getColor, onlyYear, hourMinutes } from "../../Utils/utils";
 
-import imagePlaceholder from "../assets/images/placeholder.jpg";
-import peoplePlaceholder from "../assets/images/peoplePlaceholder.svg";
-import justWatch from "../assets/images/justwatch-logo.svg";
+import imagePlaceholder from "../../assets/images/placeholder.jpg";
+import peoplePlaceholder from "../../assets/images/peoplePlaceholder.svg";
+import justWatch from "../../assets/images/justwatch-logo.svg";
 
 // TMDB
 const API_KEY = import.meta.env.VITE_API_KEY;

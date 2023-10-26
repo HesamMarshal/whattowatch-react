@@ -4,10 +4,11 @@ import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HomePage from "./pages/Home/HomePage";
-import Movie from "./pages/Movie";
+
 import Search from "./pages/Search";
 import ReleaseNotes from "./pages/ReleaseNotes";
 import NewMoviesList from "./components/NewMoviesList";
+import Movie from "./pages/MoviePage/Movie";
 
 function App() {
   return (
