@@ -1,4 +1,4 @@
-/* Mobile <600 */
+/* Mobile < 600 */
 @media screen and (max-width: 600px) {
   .movie {
     width: 100px;
@@ -21,6 +21,8 @@
     display: none;
   }
 }
+
+/* Desktop View */
 @media screen and (min-width: 601px) {
   .movie {
     width: 300px;

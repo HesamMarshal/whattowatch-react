@@ -1,3 +1,6 @@
+/* Breakpoints 600 , 700, 970, 1070, 1432 */
+
+/* Mobile View */
 @media screen and (max-width: 600px) {
   #new-movie-list {
     display: flex;
@@ -38,6 +41,7 @@
   }
 }
 
+/* Desktop View */
 @media screen and (min-width: 601px) {
   #new-movie-list {
     display: flex;
