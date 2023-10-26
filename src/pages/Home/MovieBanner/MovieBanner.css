@@ -80,4 +80,14 @@
     font-size: large;
     margin-bottom: 1rem;
   }
+  .showMore a {
+    display: flex;
+  }
+  .showMore .icon {
+    /* padding: 5px; */
+    /* margin: 10px; */
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+  }
 }

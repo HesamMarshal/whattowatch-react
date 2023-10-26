@@ -1,6 +1,7 @@
 import "./MovieBanner.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { AiOutlineArrowRight } from "react-icons/ai";
 
 import Loading from "../../../components/Loading";
 import MovieCard from "../../../components/MovieCard/MovieCard";
@@ -47,7 +48,10 @@ function MovieBanner() {
           })}
         </div>
         <div className="showMore">
-          <Link to="/newMovieList">Show More ...</Link>
+          <Link to="/newMovieList">
+            <span>Show More </span>
+            <AiOutlineArrowRight className="icon" />
+          </Link>
         </div>
       </div>
     </section>

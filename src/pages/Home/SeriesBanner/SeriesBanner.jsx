@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import axios from "axios";
-
+import { AiOutlineArrowRight } from "react-icons/ai";
 import Loading from "../../../components/Loading";
 import SerieCard from "../../../components/SerieCard/SerieCard";
 
@@ -80,7 +80,10 @@ function SeriesBanner() {
           })}
         </div>
         <div className="showMore">
-          <Link to="">Show More ...</Link>
+          <Link to="">
+            <span> Show More </span>
+            <AiOutlineArrowRight className="icon" />
+          </Link>
         </div>
       </div>
     </section>
