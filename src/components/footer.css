@@ -1,13 +1,37 @@
-#footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 60px;
+/* Breakpoints 600 , 700, 970, 1070, 1432 */
+
+/* Mobile View */
+@media screen and (max-width: 600px) {
+  #footer {
+    display: flex;
+    /* flex-direction: column; */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  .footerData {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
 }
-.footerData {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+
+/* Desktop View */
+@media screen and (min-width: 601px) {
+  #footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  .footerData {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }
