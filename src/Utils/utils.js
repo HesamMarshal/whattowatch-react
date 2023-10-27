@@ -1,5 +1,6 @@
 // TMDB
 const API_KEY = import.meta.env.VITE_API_KEY;
+export const trakt_api_key = import.meta.env.VITE_TRAKT_CLIENT_ID;
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 export const imageURL = "https://image.tmdb.org/t/p/w500/";
