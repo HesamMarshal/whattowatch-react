@@ -7,10 +7,9 @@ import { useParams } from "react-router-dom";
 import Banner from "./Banner";
 import Casts from "./Casts";
 import WatchProvider from "./WatchProvider";
+import { API_KEY, BASE_URL, TRAKT_API_KEY } from "../../Utils/utils";
 
 // TMDB
-const API_KEY = import.meta.env.VITE_API_KEY;
-const baseURL = import.meta.env.VITE_BASE_URL;
 
 function Movie() {
   const [movie, setMovie] = useState({});
@@ -21,13 +20,15 @@ function Movie() {
   const [isLoading, setIsLoading] = useState(false);
   const { id } = useParams();
 
+  const baseURL = BASE_URL;
+
   // onMount
   useEffect(() => {
     async function fetchMovie() {
       try {
-        const movieURL = baseURL + `/movie/${id}?language=en-US;&` + API_KEY;
+        const movieURL = BASE_URL + `/movie/${id}?language=en-US;&` + API_KEY;
         const movieCreditsURL =
-          baseURL + `/movie/${id}/credits??language=en-US&` + API_KEY;
+          baseURL + `/movie/${id}/credits?language=en-US&` + API_KEY;
 
         const watchProviderURL =
           baseURL + `/movie/${id}/watch/providers?language=en-US;&` + API_KEY;
