@@ -20,6 +20,7 @@
     border: 1px solid var(--color-grey-2);
     border-radius: 1.5rem;
     padding: 1rem;
+    margin: 0 10px;
   }
 
   .headerSearchItem {
@@ -87,6 +88,7 @@
     border: 1px solid var(--color-grey-2);
     border-radius: 1.5rem;
     padding: 1rem;
+    margin: 0 10px;
   }
 
   .headerSearchItem {
