@@ -80,7 +80,7 @@ function SeriesBanner() {
           })}
         </div>
         <div className="showMore">
-          <Link to="">
+          <Link to="/seriesList">
             <span> Show More </span>
             <AiOutlineArrowRight className="icon" />
           </Link>
