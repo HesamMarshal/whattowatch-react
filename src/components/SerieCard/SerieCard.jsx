@@ -35,7 +35,7 @@ function SerieCard({ tmdbId }) {
   } = serieInfo;
 
   return (
-    <Link to="">
+    <Link to={`/series/${tmdbId}`}>
       <div className="serie">
         <img
           src={poster_path ? IMG_URL + poster_path : imagePlaceholder}
