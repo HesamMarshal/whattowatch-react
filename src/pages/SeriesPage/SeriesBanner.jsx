@@ -6,7 +6,7 @@ import { getColor, imageURL, onlyYear } from "../../Utils/utils";
 
 import imagePlaceholder from "../../assets/images/placeholder.jpg";
 
-function SeriesBanner({ serie, isLoading, directors, writers }) {
+function SeriesBanner({ serie, isLoading, creator }) {
   if (isLoading) <Loading />;
 
   const {
@@ -81,19 +81,11 @@ function SeriesBanner({ serie, isLoading, directors, writers }) {
           </div>
 
           <div className="producers">
-            <div className="directors">
-              <h3>Directors:</h3>
+            <div className="creator directors">
+              <h3>Creators:</h3>
               <div>
-                {directors.map((director) => (
+                {creator.map((director) => (
                   <span key={director.id}>{director.name} &nbsp;</span>
-                ))}
-              </div>
-            </div>
-            <div className="writers">
-              <h3>Writers:</h3>
-              <div>
-                {writers.map((writer) => (
-                  <span key={writer.id}>{writer.name} &nbsp;</span>
                 ))}
               </div>
             </div>

@@ -17,8 +17,7 @@ const baseURL = BASE_URL;
 function Series() {
   const [serie, setSerie] = useState({});
   const [casts, setCasts] = useState([]);
-  const [directors, setDirectors] = useState([]);
-  const [writers, setWriters] = useState([]);
+  const [creator, setCreator] = useState([]);
   const [watchProvider, setWatchProvider] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const { id } = useParams();
@@ -37,16 +36,12 @@ function Series() {
         setIsLoading(true);
 
         const { data } = await axios.get(movieURL);
-
-        console.log(data);
         setSerie(data);
+        setCreator(data.created_by.splice(0, 3));
 
         const { data: movieCredits } = await axios.get(movieCreditsURL);
         setCasts(movieCredits.cast);
-        setDirectors(
-          movieCredits.crew.filter((item) => item.job === "Director")
-        );
-        setWriters(movieCredits.crew.filter((item) => item.job === "Writer"));
+        // console.log(movieCredits.cast);
 
         const { data: watchProviderList } = await axios.get(watchProviderURL);
         setWatchProvider(watchProviderList.results);
@@ -62,12 +57,7 @@ function Series() {
 
   return (
     <div className="singleMovie">
-      <SeriesBanner
-        serie={serie}
-        isLoading={isLoading}
-        directors={directors}
-        writers={writers}
-      />
+      <SeriesBanner serie={serie} isLoading={isLoading} creator={creator} />
       <div className="extraDetails">
         <div className="movieSidebar">
           Watch Provider
