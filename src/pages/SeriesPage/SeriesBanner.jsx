@@ -1,3 +1,5 @@
+// TODO: Rename becase there is another seriesBanner
+
 import React from "react";
 
 import Loading from "../../components/Loading";
@@ -81,7 +83,7 @@ function SeriesBanner({ serie, isLoading, creator }) {
           </div>
 
           <div className="producers">
-            <div className="creator directors">
+            <div className="creator">
               <h3>Creators:</h3>
               <div>
                 {creator.map((director) => (
