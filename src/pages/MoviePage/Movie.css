@@ -8,7 +8,17 @@
   min-height: 350px;
   display: flex;
   justify-content: center;
+  background-repeat: no-repeat;
 }
+.singleMovie .upper .cover {
+  background-image: linear-gradient(
+    to right,
+    rgba(3, 37, 65, 1) 150px,
+    rgba(3, 37, 65, 0.84) 100%
+  );
+  width: 100%;
+}
+
 .singleMovie .banner {
   display: flex;
   flex-direction: row;

@@ -31,72 +31,79 @@ function Banner({ movie, isLoading, directors, writers }) {
 
   const hourMin = hourMinutes(runtime);
 
+  const backdropFull = backdrop_path
+    ? "https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces" +
+      backdrop_path
+    : "";
+
+  const backgroundStyle = {
+    backgroundImage: `url(${backdropFull})`,
+  };
+
   return (
-    <div className="upper">
-      <div className="banner container">
-        {/* <img
-        src={backdrop_path ? imageURL + backdrop_path : imagePlaceholder}
-        alt={title}
-      /> */}
-        <div className="bannerPoster">
-          <img
-            src={poster_path ? imageURL + poster_path : imagePlaceholder}
-            alt={title}
-          />
-        </div>
-
-        <div className="bannerInfo">
-          <h3 className="movieTitle">
-            {title}&nbsp;({onlyYear(release_date)})
-          </h3>
-          <div className="details">
-            {/* TODO: Use suitable Icons for Adult */}
-            <span className="adult">{!adult ? "R" : "X"}</span>&nbsp;&bull;
-            <span className="releaseDate">&nbsp;{release_date}</span>
-            <span className="country">
-              &nbsp; (
-              {production_countries && production_countries[0].iso_3166_1}
-              )&nbsp;&bull;
-            </span>
-            <span className="genere">
-              {genres &&
-                genres.map((item) => (
-                  <span key={item.id}>&nbsp;{item.name}&nbsp;</span>
-                ))}
-            </span>
-            <span className="duration">
-              &nbsp;&bull; {hourMin && hourMin.hour}:{hourMin && hourMin.mins}
-            </span>
-          </div>
-          <div className="rating">
-            Score:{" "}
-            <span className={getColor(vote_average)}>
-              {vote_average && vote_average.toFixed(2)}
-            </span>
-            {/* TODO: add IMDB rating */}
+    <div className="upper" style={backgroundStyle}>
+      <div className="cover">
+        <div className="banner container">
+          <div className="bannerPoster">
+            <img
+              src={poster_path ? imageURL + poster_path : imagePlaceholder}
+              alt={title}
+            />
           </div>
 
-          <div className="tagline">{tagline}</div>
-          <div className="overview">
-            <h3>Overview</h3>
-            {overview}
-          </div>
-
-          <div className="producers">
-            <div className="directors">
-              <h3>Directors:</h3>
-              <div>
-                {directors.map((director) => (
-                  <span key={director.id}>{director.name} &nbsp;</span>
-                ))}
-              </div>
+          <div className="bannerInfo">
+            <h3 className="movieTitle">
+              {title}&nbsp;({onlyYear(release_date)})
+            </h3>
+            <div className="details">
+              {/* TODO: Use suitable Icons for Adult */}
+              <span className="adult">{!adult ? "R" : "X"}</span>&nbsp;&bull;
+              <span className="releaseDate">&nbsp;{release_date}</span>
+              <span className="country">
+                &nbsp; (
+                {production_countries && production_countries[0].iso_3166_1}
+                )&nbsp;&bull;
+              </span>
+              <span className="genere">
+                {genres &&
+                  genres.map((item) => (
+                    <span key={item.id}>&nbsp;{item.name}&nbsp;</span>
+                  ))}
+              </span>
+              <span className="duration">
+                &nbsp;&bull; {hourMin && hourMin.hour}:{hourMin && hourMin.mins}
+              </span>
             </div>
-            <div className="writers">
-              <h3>Writers:</h3>
-              <div>
-                {writers.map((writer) => (
-                  <span key={writer.id}>{writer.name} &nbsp;</span>
-                ))}
+            <div className="rating">
+              Score:{" "}
+              <span className={getColor(vote_average)}>
+                {vote_average && vote_average.toFixed(2)}
+              </span>
+              {/* TODO: add IMDB rating */}
+            </div>
+
+            <div className="tagline">{tagline}</div>
+            <div className="overview">
+              <h3>Overview</h3>
+              {overview}
+            </div>
+
+            <div className="producers">
+              <div className="directors">
+                <h3>Directors:</h3>
+                <div>
+                  {directors.map((director) => (
+                    <span key={director.id}>{director.name} &nbsp;</span>
+                  ))}
+                </div>
+              </div>
+              <div className="writers">
+                <h3>Writers:</h3>
+                <div>
+                  {writers.map((writer) => (
+                    <span key={writer.id}>{writer.name} &nbsp;</span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

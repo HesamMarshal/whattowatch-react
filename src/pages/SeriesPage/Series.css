@@ -1,3 +1,213 @@
+.singleMovie {
+  margin-top: 1rem;
+}
+
+.singleMovie .upper {
+  background-color: var(--color-primary);
+  background-image: var(--gradient2);
+  min-height: 350px;
+  display: flex;
+  justify-content: center;
+  background-repeat: no-repeat;
+}
+.singleMovie .upper .cover {
+  background-image: linear-gradient(
+    to right,
+    rgba(3, 37, 65, 1) 150px,
+    rgba(3, 37, 65, 0.84) 100%
+  );
+  width: 100%;
+}
+
+.singleMovie .banner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.banner .bannerPoster {
+  width: 300px;
+  margin: 1rem;
+  border-radius: 3px;
+  box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-primary);
+  position: relative;
+  overflow: hidden;
+  /* border: 1px solid red; */
+}
+.singleMovie .banner img {
+  width: 100%;
+  overflow-clip-margin: content-box;
+  overflow: clip;
+  /* object-fit: contain; */
+}
+.banner .bannerInfo {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.5rem 1rem 1rem;
+  letter-spacing: 0.5px;
+  margin: 1rem;
+}
+
+.banner .bannerInfo .movieTitle {
+  color: var(--color-secondary);
+}
+.banner .details {
+  /* display: flex; */
+  /* flex-direction: start; */
+}
+.adult {
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 1px 5px;
+}
+.tagline {
+  font-style: italic;
+}
+.banner .producers {
+  display: flex;
+  /* justify-content: spa; */
+}
 .banner .producers .creator {
   width: 100%;
+}
+
+.banner .rating span.green {
+  color: #085f08;
+}
+.banner .rating span.orange {
+  color: #ffa500;
+}
+.banner .rating span.red {
+  color: red;
+}
+
+/* Movie Body */
+.extraDetails {
+  display: flex;
+  flex-direction: row;
+}
+
+.extraDetails .movieSidebar {
+  min-width: 300px;
+  width: 25%;
+}
+.extraDetails .moviePannel {
+  min-width: 300px;
+  width: 70%;
+}
+
+.cast h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+/* .movieCast {
+  display: flex;
+} */
+ol.people {
+  list-style-type: none;
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+  display: flex;
+
+  position: relative;
+  top: 0;
+  left: 0;
+}
+/* .character img {
+  width: 100%;
+} */
+
+ol.people.scroller {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  margin-left: -10px;
+  margin-top: -10px;
+  padding-bottom: 10px;
+}
+
+.card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(227, 227, 227, 1);
+  background-color: #fff;
+  min-width: 140px;
+  width: 140px;
+  margin: 10px 4px 10px 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.peopleImg {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+  border: 0;
+}
+ol.people li > a {
+  min-width: 138px;
+  width: 100%;
+  height: 175px;
+  display: block;
+}
+a img,
+img {
+  outline: 0;
+}
+ol.people li img {
+  width: 100%;
+  height: 100%;
+}
+
+ol.people li p {
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  padding: 0 10px;
+}
+ol.people li .actorName a {
+  color: var(--color-primary);
+}
+ol.people li .character {
+  color: var(--color-primary);
+  font-size: 0.9em;
+  padding: 0 10px;
+}
+
+.watchProvider {
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.justWatch {
+  width: 150px;
+}
+.watchProvider .providersList {
+  margin-top: 1rem;
+}
+
+.providerCountry {
+  border: 1px solid var(--color-secondary);
+  margin: 1rem 1rem;
+  /* background-color: #085f08; */
+  color: black;
+  border-radius: 5px;
+  border: 1px solid #e3e3e3;
+  background-color: #b1a6a6;
+}
+.providerCountryName {
+  margin-left: 5px;
+}
+.providerLogo {
+  width: 50px;
+  aspect-ratio: auto 50 / 50;
+  height: 50px;
+  margin: 5px;
+  border-radius: 4px;
 }
