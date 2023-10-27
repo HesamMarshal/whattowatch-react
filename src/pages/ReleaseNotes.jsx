@@ -8,6 +8,7 @@ function ReleaseNotes() {
         <div className="release">
           <h3>Version 0.5.0:</h3>
           <ol>
+            <li>Link to each series</li>
             <li>Performance improvement</li>
             <li>Visual improvement</li>
           </ol>
