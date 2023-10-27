@@ -66,7 +66,6 @@ function Series() {
           {/* <WatchProvider providerList={watchProvider} /> */}
         </div>
         <div className="moviePannel">
-          Casts
           <SeriesCasts casts={casts} />
         </div>
       </div>
