@@ -9,6 +9,7 @@ import Search from "./pages/Search";
 import ReleaseNotes from "./pages/ReleaseNotes";
 import NewMoviesList from "./components/NewMoviesList";
 import Movie from "./pages/MoviePage/Movie";
+import SeriesList from "./pages/SeriesList/SeriesList";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/search" element={<Search />} />
         <Route path="/release" element={<ReleaseNotes />} />
         <Route path="/newMovieList" element={<NewMoviesList />} />
+        <Route path="/SeriesList" element={<SeriesList />} />
       </Routes>
 
       <Footer />
