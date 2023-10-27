@@ -1,7 +1,8 @@
 // TMDB
 const API_KEY = import.meta.env.VITE_API_KEY;
+// TODO: UPPER_CASE
 export const trakt_api_key = import.meta.env.VITE_TRAKT_CLIENT_ID;
-const BASE_URL = import.meta.env.VITE_BASE_URL;
+export const BASE_URL = "https://api.themoviedb.org/3";
 
 export const imageURL = "https://image.tmdb.org/t/p/w500/";
 
@@ -10,6 +11,7 @@ export const movieURL =
   BASE_URL + "/discover/movie?sort_by=popularity.desc&" + API_KEY;
 
 // Series URLS
+export const seriesBaseUrl = BASE_URL + " /tv";
 
 // Search URLS
 export const searchURL = BASE_URL + "/search/movie?" + API_KEY;
