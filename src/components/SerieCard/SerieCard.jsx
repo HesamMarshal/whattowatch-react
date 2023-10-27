@@ -44,7 +44,7 @@ function SerieCard({ tmdbId }) {
         <div className="serieInfo">
           <h3 className="serieTitle">{title}</h3>
           <span className={`rating ${getColor(vote_average)}`}>
-            {vote_average}
+            {vote_average?.toFixed(2)}
           </span>
           <div className="overview">
             <h3>Overview</h3>

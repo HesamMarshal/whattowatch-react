@@ -18,7 +18,7 @@ function MovieCard({ movie }) {
         <div className="movieInfo">
           <h3 className="movieTitle">{title}</h3>
           <span className={`rating ${getColor(vote_average)}`}>
-            {vote_average}
+            {vote_average.toFixed(2)}
           </span>
           <div className="overview">
             <h3>Overview</h3>
