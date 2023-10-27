@@ -1,7 +1,7 @@
 // TMDB
 const API_KEY = import.meta.env.VITE_API_KEY;
-// TODO: UPPER_CASE
-export const trakt_api_key = import.meta.env.VITE_TRAKT_CLIENT_ID;
+
+export const TRAKT_API_KEY = import.meta.env.VITE_TRAKT_CLIENT_ID;
 export const BASE_URL = "https://api.themoviedb.org/3";
 
 export const imageURL = "https://image.tmdb.org/t/p/w500/";

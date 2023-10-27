@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Loading from "../../components/Loading";
 import imagePlaceholder from "../../assets/images/placeholder.jpg";
-import { trakt_api_key } from "../../Utils/utils";
+import { TRAKT_API_KEY } from "../../Utils/utils";
 import { Link } from "react-router-dom";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import SerieCard from "../../components/SerieCard/SerieCard";
@@ -35,7 +35,7 @@ function SeriesList() {
       headers: {
         "Content-Type": "application/json",
         "trakt-api-version": 2,
-        "trakt-api-key": [trakt_api_key],
+        "trakt-api-key": [TRAKT_API_KEY],
       },
     };
 
