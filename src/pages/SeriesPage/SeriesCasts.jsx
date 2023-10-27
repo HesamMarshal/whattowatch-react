@@ -12,7 +12,7 @@ function SeriesCasts({ casts }) {
         {casts.map((c) => {
           const {
             adult,
-            cast_id,
+            id: cast_id,
             character,
             gender,
             id,
@@ -21,6 +21,7 @@ function SeriesCasts({ casts }) {
             original_name,
             profile_path,
           } = c;
+
           return (
             <li key={cast_id} className="card">
               <a>
