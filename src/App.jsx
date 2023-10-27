@@ -5,7 +5,7 @@ import HomePage from "./pages/Home/HomePage";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import Search from "./pages/Search";
+import Search from "./pages/Search/Search";
 
 import NewMoviesList from "./components/NewMoviesList";
 import Movie from "./pages/MoviePage/Movie";

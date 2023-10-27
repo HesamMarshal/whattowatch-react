@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { searchURL } from "../Utils/utils";
+import { searchURL } from "../../Utils/utils";
 import axios from "axios";
-import Loading from "../components/Loading";
-import MovieCard from "../components/MovieCard/MovieCard";
+import Loading from "../../components/Loading";
+import MovieCard from "../../components/MovieCard/MovieCard";
 
 function Search() {
   const [movies, setMovies] = useState([]);
