@@ -66,36 +66,8 @@ function SeriesList() {
           <SerieCard tmdbId={serie.show.ids.tmdb} key={serie.show.ids.tmdb} />
         );
       })}
-
-      <div className="showMore">
-        <Link to="">
-          <span> Show More </span>
-          <AiOutlineArrowRight className="icon" />
-        </Link>
-      </div>
     </section>
   );
 }
 
 export default SeriesList;
-
-function Series({ serie }) {
-  const { watchers, show } = serie;
-  const poster_path = "";
-
-  return (
-    <div className="movie">
-      <img
-        src={poster_path ? IMG_URL + poster_path : imagePlaceholder}
-        alt={show.title}
-      />
-      <div className="movieInfo">
-        <h3>{show.title}</h3>
-        <span className="green">{watchers}</span>
-        <div className="overview">
-          <h3>Overview</h3>
-        </div>
-      </div>
-    </div>
-  );
-}
