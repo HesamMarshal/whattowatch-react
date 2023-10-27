@@ -10,6 +10,7 @@ import ReleaseNotes from "./pages/ReleaseNotes";
 import NewMoviesList from "./components/NewMoviesList";
 import Movie from "./pages/MoviePage/Movie";
 import SeriesList from "./pages/SeriesList/SeriesList";
+import Series from "./pages/SeriesPage/Series";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/release" element={<ReleaseNotes />} />
         <Route path="/newMovieList" element={<NewMoviesList />} />
         <Route path="/SeriesList" element={<SeriesList />} />
+        <Route path="/series/:id" element={<Series />} />
       </Routes>
 
       <Footer />
