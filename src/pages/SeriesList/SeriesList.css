@@ -1,0 +1,7 @@
+#new-series-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: var(--color-primary);
+  background-image: var(--gradient2);
+}
