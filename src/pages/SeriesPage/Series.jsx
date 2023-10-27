@@ -6,6 +6,8 @@ import { useParams } from "react-router-dom";
 
 import SeriesBanner from "./SeriesBanner";
 import { BASE_URL } from "../../Utils/utils";
+import SeriesCasts from "./SeriesCasts";
+
 // import Casts from "./Casts";
 // import WatchProvider from "./WatchProvider";
 
@@ -65,7 +67,7 @@ function Series() {
         </div>
         <div className="moviePannel">
           Casts
-          {/* <Casts casts={casts} /> */}
+          <SeriesCasts casts={casts} />
         </div>
       </div>
     </div>
