@@ -10,7 +10,7 @@ function Footer() {
           <a href="https://hesammarshal.ir">Hesam Marshal Akrami</a>
         </div>
         <div>
-          <Link to="/release">Release 0.5.0</Link>
+          <Link to="/release">Release 0.6.0</Link>
         </div>
       </div>
     </div>

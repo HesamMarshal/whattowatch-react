@@ -6,8 +6,19 @@ function ReleaseNotes() {
     <section id="releases">
       <div className="container">
         <div className="release">
+          <h3>Version 0.6.0:</h3>
+          <ol>
+            <li>Search between series and movies</li>
+            <li>Mobile View for movies and series</li>
+            <li>Change link color</li>
+            <li>Change /NewMovieList address to /moviesList</li>
+            <li>Performance improvement</li>
+          </ol>
+        </div>
+        <div className="release">
           <h3>Version 0.5.0:</h3>
           <ol>
+            <li>add backdrop to banner</li>
             <li>Link to each series</li>
             <li>Performance improvement</li>
             <li>Visual improvement</li>
