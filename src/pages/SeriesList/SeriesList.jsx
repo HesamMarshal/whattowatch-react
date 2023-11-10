@@ -1,12 +1,12 @@
 import "./SeriesList.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Loading from "../../components/Loading";
-import imagePlaceholder from "../../assets/images/placeholder.jpg";
-import { TRAKT_API_KEY } from "../../Utils/utils";
-import { Link } from "react-router-dom";
-import { AiOutlineArrowRight } from "react-icons/ai";
+import Loading from "../../components/Loading/Loading";
 import SerieCard from "../../components/SerieCard/SerieCard";
+import { TRAKT_API_KEY } from "../../Utils/utils";
+// import imagePlaceholder from "../../assets/images/placeholder.jpg";
+// import { Link } from "react-router-dom";
+// import { AiOutlineArrowRight } from "react-icons/ai";
 
 // TMDB
 

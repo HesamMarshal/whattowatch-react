@@ -2,11 +2,9 @@
 
 import React from "react";
 
-import Loading from "../../components/Loading";
-
-import { getColor, imageURL, onlyYear } from "../../Utils/utils";
-
+import Loading from "../../components/Loading/Loading";
 import imagePlaceholder from "../../assets/images/placeholder.jpg";
+import { getColor, imageURL, onlyYear } from "../../Utils/utils";
 
 function SeriesBanner({ serie, isLoading, creator }) {
   if (isLoading) <Loading />;

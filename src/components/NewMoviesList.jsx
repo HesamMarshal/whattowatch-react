@@ -1,8 +1,7 @@
 import "./NewMoviesList.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Loading from "./Loading";
-
+import Loading from "./Loading/Loading";
 import MovieCard from "./MovieCard/MovieCard";
 import { movieURL } from "../Utils/utils";
 

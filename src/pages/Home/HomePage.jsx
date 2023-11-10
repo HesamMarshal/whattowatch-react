@@ -1,4 +1,4 @@
-import WatchOffer from "../../components/WatchOffer";
+// import WatchOffer from "../../components/WatchOffer/WatchOffer";
 
 import MovieBanner from "./MovieBanner/MovieBanner";
 import SeriesBanner from "./SeriesBanner/SeriesBanner";

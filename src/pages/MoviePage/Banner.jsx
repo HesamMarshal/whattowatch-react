@@ -1,10 +1,8 @@
 import React from "react";
 
-import Loading from "../../components/Loading";
-
-import { getColor, hourMinutes, imageURL, onlyYear } from "../../Utils/utils";
-
+import Loading from "../../components/Loading/Loading";
 import imagePlaceholder from "../../assets/images/placeholder.jpg";
+import { getColor, hourMinutes, imageURL, onlyYear } from "../../Utils/utils";
 
 function Banner({ movie, isLoading, directors, writers }) {
   if (isLoading) <Loading />;

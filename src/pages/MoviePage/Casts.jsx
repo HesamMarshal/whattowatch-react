@@ -1,7 +1,7 @@
 import React from "react";
 import { imageURL } from "../../Utils/utils";
 import peoplePlaceholder from "../../assets/images/peoplePlaceholder.svg";
-import Loading from "../../components/Loading";
+import Loading from "../../components/Loading/Loading";
 
 function Casts({ casts }) {
   if (casts.length === 0) return <Loading />;

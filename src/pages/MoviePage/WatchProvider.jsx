@@ -2,7 +2,7 @@ import React from "react";
 import ReactCountryFlag from "react-country-flag";
 import justWatch from "../../assets/images/justwatch-logo.svg";
 import { imageURL } from "../../Utils/utils";
-import Loading from "../../components/Loading";
+import Loading from "../../components/Loading/Loading";
 
 function WatchProvider({ providerList }) {
   if (Object.keys(providerList) === 0) return <Loading />;
