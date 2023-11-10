@@ -49,12 +49,12 @@ function Banner({ movie, isLoading, directors, writers }) {
             />
           </div>
 
+          {/* TODO: Use suitable Icons for Adult */}
           <div className="bannerInfo">
             <h3 className="movieTitle">
               {title}&nbsp;({onlyYear(release_date)})
             </h3>
             <div className="details">
-              {/* TODO: Use suitable Icons for Adult */}
               <span className="adult">{!adult ? "R" : "X"}</span>&nbsp;&bull;
               <span className="releaseDate">&nbsp;{release_date}</span>
               <span className="country">
@@ -77,7 +77,6 @@ function Banner({ movie, isLoading, directors, writers }) {
               <span className={getColor(vote_average)}>
                 {vote_average && vote_average.toFixed(2)}
               </span>
-              {/* TODO: add IMDB rating */}
             </div>
 
             <div className="tagline">{tagline}</div>

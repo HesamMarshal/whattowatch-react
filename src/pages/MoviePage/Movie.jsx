@@ -67,12 +67,12 @@ function Movie() {
         writers={writers}
       />
       <div className="extraDetails">
-        <div className="movieSidebar">
+        {/* <div className="movieSidebar">
           <WatchProvider providerList={watchProvider} />
-        </div>
-        <div className="moviePannel">
+        </div> */}
+        {/* <div className="moviePannel">
           <Casts casts={casts} />
-        </div>
+        </div> */}
       </div>
     </div>
   );
