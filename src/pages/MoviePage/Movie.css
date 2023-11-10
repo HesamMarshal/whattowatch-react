@@ -18,6 +18,17 @@
   );
   width: 100%;
 }
+
+.banner .rating span.green {
+  color: #085f08;
+}
+.banner .rating span.orange {
+  color: #ffa500;
+}
+.banner .rating span.red {
+  color: red;
+}
+
 /* Mobile View */
 @media screen and (max-width: 600px) {
   .singleMovie .banner {
@@ -85,27 +96,21 @@
     width: 300px;
   }
 
-  .banner .rating span.green {
-    color: #085f08;
-  }
-  .banner .rating span.orange {
-    color: #ffa500;
-  }
-  .banner .rating span.red {
-    color: red;
-  }
-
   /* Movie Body */
   .extraDetails {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .extraDetails .movieSidebar {
+    order: 1;
     min-width: 300px;
     width: 25%;
   }
   .extraDetails .moviePannel {
+    order: 0;
     min-width: 300px;
     width: 70%;
   }
@@ -282,16 +287,6 @@
   }
   .banner .producers .writers {
     width: 300px;
-  }
-
-  .banner .rating span.green {
-    color: #085f08;
-  }
-  .banner .rating span.orange {
-    color: #ffa500;
-  }
-  .banner .rating span.red {
-    color: red;
   }
 
   /* Movie Body */
