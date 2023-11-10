@@ -80,14 +80,20 @@ a {
   cursor: pointer;
   /* color: #646cff; */
   /* color: inherit; */
+  color: var(--color-primary);
 }
 
 a:hover {
   /* color: #535bf2; */
+  color: var(--color-primary);
 }
 
 a:visited {
   /* color: #535bf2; */
+  color: var(--color-primary);
+}
+a:active {
+  color: var(--color-primary);
 }
 
 h1 {
@@ -141,7 +147,7 @@ ol {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    /* color: #747bff; */
   }
   button {
     background-color: #f9f9f9;
