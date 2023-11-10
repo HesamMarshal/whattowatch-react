@@ -48,7 +48,7 @@ function MovieBanner() {
           })}
         </div>
         <div className="showMore">
-          <Link to="/newMovieList">
+          <Link to="/moviesList">
             <span>Show More </span>
             <AiOutlineArrowRight className="icon" />
           </Link>

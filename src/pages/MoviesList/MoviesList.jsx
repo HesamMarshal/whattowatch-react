@@ -1,11 +1,11 @@
-import "./NewMoviesList.css";
+import "./MoviesList.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Loading from "./Loading/Loading";
-import MovieCard from "./MovieCard/MovieCard";
-import { movieURL } from "../Utils/utils";
+import Loading from "../../components/Loading/Loading";
+import MovieCard from "../../components/MovieCard/MovieCard";
+import { movieURL } from "../../Utils/utils";
 
-function NewMoviesList() {
+function MoviesList() {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -36,4 +36,4 @@ function NewMoviesList() {
   );
 }
 
-export default NewMoviesList;
+export default MoviesList;

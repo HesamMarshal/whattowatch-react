@@ -7,11 +7,12 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Search from "./pages/Search/Search";
 
-import NewMoviesList from "./components/NewMoviesList";
+// import NewMoviesList from "./components/NewMoviesList";
 import Movie from "./pages/MoviePage/Movie";
 import SeriesList from "./pages/SeriesList/SeriesList";
 import Series from "./pages/SeriesPage/Series";
 import ReleaseNotes from "./pages/Release/ReleaseNotes";
+import MoviesList from "./pages/MoviesList/MoviesList";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
         <Route path="/movie/:id" element={<Movie />} />
         <Route path="/search" element={<Search />} />
         <Route path="/release" element={<ReleaseNotes />} />
-        <Route path="/newMovieList" element={<NewMoviesList />} />
+        <Route path="/moviesList" element={<MoviesList />} />
         <Route path="/seriesList" element={<SeriesList />} />
         <Route path="/series/:id" element={<Series />} />
       </Routes>
