@@ -85,16 +85,16 @@
 }
 
 /* Series Body */
-.extraDetails {
+.seriesExtraDetails {
   display: flex;
   flex-direction: row;
 }
 
-.extraDetails .seriesSidebar {
+.seriesExtraDetails .seriesSidebar {
   min-width: 300px;
   width: 25%;
 }
-.extraDetails .seriesPannel {
+.seriesExtraDetails .seriesPannel {
   min-width: 300px;
   width: 70%;
 }
