@@ -58,7 +58,9 @@ function SeriesBanner({ serie, isLoading, creator }) {
               <span className="releaseDate">&nbsp;{first_air_date}</span>
               <span className="country">
                 &nbsp; (
-                {production_countries && production_countries[0].iso_3166_1}
+                {production_countries &&
+                  production_countries.length > 0 &&
+                  production_countries[0].iso_3166_1}
                 )&nbsp;&bull;
               </span>
               <span className="genere">

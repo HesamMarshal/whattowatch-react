@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { searchURL } from "../../Utils/utils";
+import { multiSearchURL, searchURL } from "../../Utils/utils";
 import axios from "axios";
 import Loading from "../../components/Loading/Loading";
-import MovieCard from "../../components/MovieCard/MovieCard";
+import ItemCard from "./ItemCard";
 
 function Search() {
   const [movies, setMovies] = useState([]);
@@ -16,7 +16,9 @@ function Search() {
     async function fetchMovies() {
       try {
         setIsLoading(true);
-        const { data } = await axios.get(`${searchURL}&query=${searchItem}`);
+        const { data } = await axios.get(
+          `${multiSearchURL}&query=${searchItem}`
+        );
         // console.log(data.results);
         setMovies(data.results);
       } catch (error) {
@@ -32,7 +34,7 @@ function Search() {
   return (
     <section id="new-movie-list">
       {movies.map((movie) => {
-        return <MovieCard key={movie.id} movie={movie} />;
+        return <ItemCard key={movie.id} movie={movie} />;
       })}
     </section>
   );
