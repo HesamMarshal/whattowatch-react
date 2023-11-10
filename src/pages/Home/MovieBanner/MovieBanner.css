@@ -10,14 +10,14 @@
   .newMovieBox {
     background: #7f1d1d;
     background: var(--movieBannerGradient);
+    display: flex;
+    flex-direction: column;
     border-radius: 25px;
     min-width: 300px;
     max-width: 350px;
-    display: flex;
-    flex-direction: column;
+    min-height: 200px;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    min-height: 200px;
   }
   .newMovieBox h3 {
     margin: 0.5rem 0 0 1rem;
