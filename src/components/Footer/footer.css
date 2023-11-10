@@ -1,5 +1,10 @@
 /* Breakpoints 600 , 700, 970, 1070, 1432 */
-
+.footerData a,
+.footerData a:hover,
+.footerData a:active,
+.footerData a:visited {
+  color: var(--color-white);
+}
 /* Mobile View */
 @media screen and (max-width: 600px) {
   #footer {
